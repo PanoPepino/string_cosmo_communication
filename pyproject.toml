@@ -1,0 +1,56 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling", "hatch-fancy-pypi-readme"]
+
+[project]
+authors = [{name = "Pano", email = "panizofisico@gmail.com"}]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Graphics",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "manim>=0.18",
+  "numpy>=2.0.2",
+  "pybtex>=0.23.0",
+]
+description = "Package with Manim animations for string theory research communication"
+dynamic = ["readme", "version"]
+keywords = ["manim", "research", "animations"]
+license = "MIT"
+license-files = ["LICENSE*"]  # Glob pattern for license files
+name = "anim_theoretical"
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+docs = [
+  "furo>= 2024.8.6",
+  "sphinx>= 7.4.7",
+]
+
+
+[project.urls]
+Documentation = "to be added"
+Repository = "to be added"
+
+[tool.hatch.version]
+path = "src/anim_theoretical/__version__.py"
+
+[tool.ruff.lint]
+extend-ignore = []
+extend-select = [
+  "D",  # Documentation lints
+  "I",  # Isort
+  "TID",  # https://docs.astral.sh/ruff/rules/relative-imports/
+]
+isort = {known-first-party = ["anim_theoretical"]}
+
+[tool.uv]
+dev-dependencies = [
+  "beanim[docs,tests]",
+  "pre-commit>=3.5.0",
+]
