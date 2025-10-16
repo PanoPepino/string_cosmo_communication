@@ -204,7 +204,7 @@ class Table_Bh_Embedding(Table_General, Group):
                     color=self.hlight_3_color, fill_opacity=opa_table
                 )
 
-        ## ALL DIMENSIONS TOGETHER ##
+        ##  ALL DIMENSIONS TOGETHER ##
 
         self.all_dimensions = non_compact_dim.copy().add(
             *[element.copy() for element in self.compact_dim.copy()]
@@ -274,10 +274,8 @@ class Table_Bh_Embedding(Table_General, Group):
             self.add(tab_all, box_all)
 
         elif type == "split":
-            comp = VGroup(tab_non_compact, box_non_compact)
-            noncomp = VGroup(tab_compact, box_compact).scale_to_fit_width(
-                comp.get_width()
-            )
+            noncomp = VGroup(tab_non_compact, box_non_compact)
+            comp = VGroup(tab_compact, box_compact)
             noncomp.next_to(comp, chosen_position)
             self.add(comp, noncomp)
 

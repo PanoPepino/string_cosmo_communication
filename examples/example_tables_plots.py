@@ -1,7 +1,7 @@
 from manim import *
 from anim_theoretical import *
 
-import_template("fancy_mint")
+import_template("dark_depths")
 
 
 class Example_Table_Summary_Bubble_and_Scales(Scene):
@@ -22,7 +22,7 @@ class Example_Table_Bh_Embedding(Scene):
             .shift(UP)
         )
         split = (
-            Table_Bh_Embedding(type="split", chosen_position=RIGHT)
+            Table_Bh_Embedding(type="split")
             .scale_to_fit_width(config.frame_width - 1)
             .next_to(together, DOWN, buff=0.2)
         )
