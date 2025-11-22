@@ -6,42 +6,53 @@ __all__ = ["AdS_Jc"]
 
 
 class AdS_Jc(Vacuum_General, Brane_General, VGroup):
-    """Class to represent the vacua discussion for RS and DB models. It includes an arrow to discuss the normal orientation changes ([-1] Entry). It has several animations in the form of methods. See Classes Vacuum and Brane General for further parameters.
+    """
+    Represent vacuum discussions for Randall-Sundrum (RS) and Dark Bubble (DB) models.
 
-    - **Parameters**::
+    This class visualizes the brane-vacuum system with arrows to illustrate normal
+    orientation changes across the brane. It includes animations for demonstrating
+    Z₂ symmetry (RS case) and normal vector behavior in both models. The arrow
+    element is always the last (``[-1]``) entry in the group.
 
-        - vacua_type (str, optional): To choose among Randall-Sundrum (RS) or DarkBubble (DB). Defaults to "DB".
-        - arrow_color (ParsableManimColor, optional): Defaults to WHITE.
+    :param vacua_type: Type of vacuum configuration. Options:
+        - ``"RS"``: Randall-Sundrum model with Z₂ symmetry.
+        - ``"DB"``: Dark Bubble model with asymmetric vacua.
+        Default is ``"DB"``.
+    :type vacua_type: str
 
-    - An **Example** of how this class works::
+    :param arrow_color: Color of the normal vector arrow. Default is ``WHITE``.
+    :type arrow_color: ParsableManimColor
 
-        from manim  import *
-        from beanim import *
+    :param kwargs: Additional keyword arguments passed to :class:`Vacuum_General`,
+        :class:`Brane_General`, and :class:`VGroup`.
+
+    .. note::
+
+       See :class:`Vacuum_General` and :class:`Brane_General` for additional
+       inherited parameters related to vacuum and brane appearance.
+
+    **Example usage:**
+
+    .. code-block:: python
+
+        from manim import *
+        from anim_theoretical import AdS_Jc
 
         class Example_AdS_Jc(Scene):
             def construct(self):
-                show_db= AdS_Jc(vacua_type= "DB")
-                show_rs= AdS_Jc(vacua_type= "RS")
-                show= VGroup(show_db, show_rs).arrange(RIGHT, aligned_edge= DOWN, buff= 0.2)
+                show_db = AdS_Jc(vacua_type="DB")
+                show_rs = AdS_Jc(vacua_type="RS")
+                show = VGroup(show_db, show_rs).arrange(RIGHT, aligned_edge=DOWN, buff=0.2)
                 show.scale_to_fit_width(config.frame_width-2)
 
-                self.play(AnimationGroup(map(lambda x: x.fade_in(), show)))
-                self.play(AnimationGroup(map(lambda x: x.fade_in_arrow(), show)))
-                self.play(show[1].show_symmetry(rt= 5))
+                self.play(AnimationGroup(*[x.fade_in() for x in show]))
+                self.play(AnimationGroup(*[x.fade_in_arrow() for x in show]))
+                self.play(show[1].show_symmetry(rt=5))
                 self.play(show[1].restore_symmetry())
-                self.play(AnimationGroup(show[0].show_n_vector_db(rt= 5),
-                                         show[1].show_n_vector_rs(rt= 5)))
+                self.play(AnimationGroup(show[0].show_n_vector_db(rt=5),
+                                         show[1].show_n_vector_rs(rt=5)))
                 self.play(show.animate.shift(2*UP))
                 self.play(FadeOut(show))
-
-
-    Testting video!!!
-
-    .. video:: media/videos/ads_jc.mp4
-        :loop:
-
-    - **Methods**::
-
     """
 
     def __init__(
@@ -149,51 +160,63 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
     @override_animation(FadeIn)
     def fade_in(
         self, rt: float = 1, rf: float = linear
-    ) -> Animation:  # There is an issue with adding the group and scaling or shifting position of it. If I do not add the whole group from the very beginning, the system will not rescale those elements that I will add later. In order to solve this issue, I override the FadeIn animation to avoid this issue.
-        """Args::
+    ) -> Animation:
+        """
+        Fade in the vacuum-brane system without the arrow.
 
-            - rt (float, optional): run_time animation. Defaults to 1.
-            - rf (float, optioanl): rate function. Defaults to linear.
+        This method overrides the default :class:`FadeIn` animation to prevent
+        scaling issues when adding elements to a group after initialization.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``1``.
+        :type rt: float
 
-            - Animation: FadeIn animation of the group without the arrow.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
 
+        :return: FadeIn animation of all group elements except the arrow.
+        :rtype: Animation
         """
         return FadeIn(self.object[:-1], run_time=rt, rate_function=rf)
 
     def fade_in_arrow(
         self, rt: float = 2, rf: float = linear
-    ) -> Animation:  # The arrow associates this method with a class animation.
-        """Args::
+    ) -> Animation:
+        """
+        Fade in the normal vector arrow.
 
-            - rt (float, optional): run_time animation. Defaults to 1.
-            - rf (float, optioanl): rate function. Defaults to linear.
+        :param rt: Run time of the animation. Default is ``2``.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
 
-
-            - Animation: FadeIn the arrow of the group.
-
+        :return: FadeIn animation of the arrow element.
+        :rtype: Animation
         """
         return FadeIn(self.object[-1], run_time=rt, rate_func=rf)
 
     def show_symmetry(
         self, rt: float = 2, rf=linear
-    ) -> Succession:  # The arrow associated this method with a class animation.
-        """Args::
+    ) -> Succession:
+        """
+        Demonstrate Z₂ symmetry by folding the outside vacuum.
 
-            - rt (float, optional): run_time animation. Defaults to 1.
-            - rf (float, optioanl): rate function. Defaults to linear.
+        This animation removes the outside vacuum and rotates the inside vacuum
+        about the brane to simulate the Z₂ symmetry operation.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``2``.
+        :type rt: float
 
-            - Animation: Removes outside vacuum and bend over the Z2 sym to simulate the action of the self.symmetry.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
+
+        :return: Animation showing Z₂ symmetry folding.
+        :rtype: Succession
 
         .. note::
 
-            This method only works with RS-type. Recall. The Dark Bubble has a proper inside and outside.
-
+           This method only works with RS-type (``vacua_type="RS"``). The Dark Bubble
+           model has distinct inside and outside vacua without this symmetry.
         """
         return Succession(
             FadeOut(self.object[-3], run_time=rt / 2, rate_func=rf),
@@ -207,15 +230,17 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
         )
 
     def restore_symmetry(self, rt: float = 2, rf=linear) -> Succession:
-        """Args::
+        """
+        Restore the original vacuum configuration after symmetry demonstration.
 
-            - rt (float, optional): Defaults to 1.
-            - rf (_vacua_type_, optional): Defaults to linear.
+        :param rt: Run time of the animation. Default is ``2``.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
 
-            - Animation: Restores previous symmetry.
-
+        :return: Animation restoring the unfolded configuration.
+        :rtype: Succession
         """
         return Succession(
             Rotate(
@@ -229,15 +254,20 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
         )
 
     def show_n_vector_rs(self, rt: float = 2, rf=linear) -> Succession:
-        """Args::
+        """
+        Show the behavior of the normal vector across vacua in the RS model.
 
-            - rt (float, optional): Defaults to 1.
-            - rf (_type_, optional): Defaults to linear.
+        Demonstrates how the normal vector changes orientation when crossing
+        the brane in the Randall-Sundrum scenario with Z₂ symmetry.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``2``.
+        :type rt: float
 
-           - Animation: Shows the behaviour of the normal vector across the vacua in the RS model.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
 
+        :return: Animation showing normal vector evolution across the brane.
+        :rtype: Succession
         """
         center = self.object[0].get_center()
 
@@ -253,14 +283,20 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
         )
 
     def show_n_vector_db(self, rt: float = 2, rf=linear) -> Succession:
-        """Args::
+        """
+        Show the behavior of the normal vector across vacua in the DB model.
 
-            - rt (float, optional): Defaults to 1.
-            - rf (_type_, optional): Defaults to linear.
+        Demonstrates how the normal vector maintains consistent orientation
+        in the Dark Bubble model where vacua have distinct properties.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``2``.
+        :type rt: float
 
-            - Animation: Shows the behaviour of the normal vector across the vacua in the DB model.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
+
+        :return: Animation showing normal vector behavior in asymmetric vacua.
+        :rtype: Succession
         """
         return Succession(
             self.object[-1].animate(rate_func=rf).move_to(self.object.get_right()),
