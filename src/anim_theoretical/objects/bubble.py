@@ -8,65 +8,88 @@ __all__ = ["Bubble"]
 
 
 class Bubble(Brane_General, Vacuum_General, Group):
-    """Class to represent Dark Bubble discussions in 2 dimensions. See Brane and Vacuum General for further information.
+    """
+    Represent Dark Bubble scenarios in 2D with various physical configurations.
 
-    - **Parameters**::
+    This class visualizes bubble nucleation and expansion in string cosmology,
+    supporting multiple physical scenarios including empty vacuum, radiation content,
+    electromagnetic fields, strings, gravitational waves, and energy conservation discussions.
+    The bubble (brane) is always the 3rd element (index ``[2]``) of the group.
 
-        - bubble_type (str, optional): Choose the type of bubble to represent.
-        Defaults to empty.
-            - empty: Regular inside/outside with both AdS scales.
-            - instanton: Same as before, but AdS scales are replaced by potentials.
-            - radiation: Add mass to the inside vacuum.
-            - strings: Add radially stretching strings to the bulk.
-            - GW: Add gravitational waves to the bulk.
-            - em: Add background B-field to bulk and on the brane.
-            - energy_discussion: An "energy bar" appears below the box, to discuss
-            energy conservation.
-        - box_height (float, optional):Height of vacuum. Defaults to 6.
-        - box_width (float, optional): Length of vacuum. Defaults to 8.
-        - string_color (ParsableManimColor, optional): Colors of strings. Defaults to BLUE.
-        - string_stroke_w (float, optional): Defaults to 1.5.
-        - field_gradient (float, optional): Represents how good the gradient of the source
-        field ON the brane is. Defaults to 50.
-        - field_top_color (ParsableManimColor, optional): Color of field on top of the brane.
-        Defaults to BLUE.
-        - field_bulk_color (ParsableManimColor, optional): (To be constructed).
-        Defaults to PINK.
+    :param bubble_type: Type of bubble configuration. Options:
+        - ``"empty"``: Standard inside/outside configuration with AdS scales k− and k₊.
+        - ``"instanton"``: AdS scales replaced by scalar potentials V(φ−) and V(φ₊).
+        - ``"radiation"``: Includes matter (mass) inside the bubble.
+        - ``"strings"``: Shows radially stretching strings from brane to bulk boundary.
+        - ``"GW"``: Displays gravitational wave emission from the brane.
+        - ``"em"``: Visualizes electromagnetic B-field on the brane with glow effect.
+        - ``"energy_discussion"``: Shows energy bar for discussing energy conservation.
+        Default is ``"empty"``.
+    :type bubble_type: str
+
+    :param box_height: Height of the vacuum background box. Default is ``6``.
+    :type box_height: float
+
+    :param box_width: Width of the vacuum background box. Default is ``8``.
+    :type box_width: float
+
+    :param string_color: Color of the strings (for ``bubble_type="strings"``). Default is ``BLUE``.
+    :type string_color: ParsableManimColor
+
+    :param string_stroke_w: Stroke width of the strings. Default is ``1.5``.
+    :type string_stroke_w: float
+
+    :param field_gradient: Number of gradient layers for the electromagnetic field glow effect.
+        Higher values create smoother gradients. Default is ``50``.
+    :type field_gradient: float
+
+    :param field_top_color: Color of the electromagnetic field on the brane surface.
+        Default is ``BLUE``.
+    :type field_top_color: ParsableManimColor
+
+    :param field_bulk_color: Color for bulk electromagnetic field (to be implemented).
+        Default is ``PINK``.
+    :type field_bulk_color: ParsableManimColor
+
+    :param kwargs: Additional keyword arguments passed to :class:`Brane_General`,
+        :class:`Vacuum_General`, and :class:`Group`.
 
     .. note::
 
-        The bubble is always the 2nd entry of the class.
+       The bubble (brane) is always the 3rd element (``[2]``) in the internal ``bubble`` group.
+       See :class:`Brane_General` and :class:`Vacuum_General` for additional inherited parameters.
 
     .. attention::
 
-        The "em" mode lacks the representation of the B-field in the bulk
+       The ``"em"`` mode currently lacks representation of the B-field in the bulk;
+       only the brane surface field is visualized.
 
-    - **Examples**::
+    **Example usage:**
 
-        from manim  import *
-        from beanim import *
+    .. code-block:: python
+
+        from manim import *
+        from anim_theoretical import Bubble
 
         class Example_Bubble(Scene):
             def construct(self):
-                bubble_types= ["empty", "radiation", "em", "strings", "GW"]
-                bubble_group= Group(*[Bubble(bubble_type= style).scale(0.4) for style in bubble_types])
-                bubble_group.arrange_in_grid(2,3)
+                bubble_types = ["empty", "radiation", "em", "strings", "GW"]
+                bubble_group = Group(*[Bubble(bubble_type=style).scale(0.4)
+                                       for style in bubble_types])
+                bubble_group.arrange_in_grid(2, 3)
 
-                self.play(AnimationGroup(map(lambda x: x.fade_in_bulk(), bubble_group)))
-                self.play(AnimationGroup(map(lambda x: x.create_bubble(), bubble_group)))
-                self.play(AnimationGroup(map(lambda x: x.expand_bubble(), bubble_group)))
+                self.play(AnimationGroup(*[x.fade_in_bulk() for x in bubble_group]))
+                self.play(AnimationGroup(*[x.create_bubble() for x in bubble_group]))
+                self.play(AnimationGroup(*[x.expand_bubble() for x in bubble_group]))
 
         class Example_Energy_Discussion(Scene):
             def construct(self):
-                bub= Bubble(bubble_type= "energy_discussion").scale(0.8)
+                bub = Bubble(bubble_type="energy_discussion").scale(0.8)
                 self.play(bub.fade_in_bulk())
                 self.play(bub.fail_creation())
                 self.play(bub.create_bubble())
                 self.play(bub.expand_bubble())
                 self.play(FadeOut(bub))
-
-    - **Methods**::
-
     """
 
     def __init__(
@@ -83,7 +106,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
     ):
         super().__init__(**kwargs)
 
-        # It seems I have to do this to define properties inside animation functions
+        # Store bubble type for use in animation methods
         self.bubble_type = bubble_type
 
         # Geometry Bubbles
@@ -156,11 +179,9 @@ class Bubble(Brane_General, Vacuum_General, Group):
         )
         self.brane_w_anchor = VGroup(dots, self.brane)
 
-        # This simple list is more elegant. Impressive that for the iteration to work, one needs to "rewrite" initial and final positions.
+        # Create strings with always_redraw for dynamic positioning
         for angle, position in zip(dots, box_positions):
-            if (
-                np.linalg.norm(position) > 1
-            ):  # To avoid strange position if corner radius is big.
+            if np.linalg.norm(position) > 1:
                 string = always_redraw(
                     lambda angle=angle, position=position: Line(
                         start=angle,
@@ -182,7 +203,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
                 )
                 self.strings.add(string)
 
-        # Grav. Waves
+        # Gravitational Waves
         def func_waves(t):
             return (
                 (self.brane_radius + 0.01 * np.sin(25 * t)) * np.cos(t),
@@ -203,8 +224,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
             fill_opacity=0,
         ).set_color(self.brane_color)
 
-        # Extra Fields
-        # Electromagnetism (Note 5% extra radius)
+        # Extra Fields - Electromagnetism
         def field(
             grad,
             mobject,
@@ -263,7 +283,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
             )
         )
 
-        # Note that position of the brane is always [2] in the bubble_group.
+        # Assemble bubble based on type
         if bubble_type == "empty":
             self.bubble = VGroup(
                 self.background,
@@ -326,18 +346,23 @@ class Bubble(Brane_General, Vacuum_General, Group):
             )
             self.add(self.bubble, self.bar_outside, self.in_text, self.energy_gain)
 
-    # Methods
     def fade_in_bulk(
         self, rt: float = 1, rf: float = linear
-    ) -> Animation:  # The arrow associates this method with a class animation.
-        """Args::
+    ) -> Animation:
+        """
+        Fade in the bulk vacuum and outside cosmological constant label.
 
-            - rt (float, optional): run_time animation. Defaults to 1.
-            - rf (float, optional): rate function. Defaults to linear.
+        For ``bubble_type="energy_discussion"``, this also creates the energy bar
+        visualization at the bottom of the scene.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``1``.
+        :type rt: float
 
-            - Animation: Returns the creation of the bulk box and the value of the cosmological constant outside.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
+
+        :return: Animation showing bulk box and outside text appearance.
+        :rtype: Animation or Succession
         """
         if self.bubble_type == "energy_discussion":
             return Succession(
@@ -349,25 +374,31 @@ class Bubble(Brane_General, Vacuum_General, Group):
                     rate_func=rf,
                 ),
             )
-
         else:
             return FadeIn(self.bubble[:2], run_time=rt, rate_func=rf)
 
     def fail_creation(
         self, rt: float = 3, rf: float = there_and_back_with_pause
     ) -> AnimationGroup:
-        """.. note::
+        """
+        Demonstrate failed bubble nucleation due to insufficient energy.
 
-            This method only works with energy_discussion.
+        The brane attempts to nucleate but fails because the energy bar shows
+        insufficient energy available for bubble creation.
 
-        Args::
+        :param rt: Run time of the animation. Default is ``3``.
+        :type rt: float
 
-            - rt (float, optional): Defaults to 2.
-            - rf (float, optional): Defaults to linear.
+        :param rf: Rate function controlling animation timing. Default is
+            ``there_and_back_with_pause``.
+        :type rf: function
 
-        Returns::
+        :return: Animation showing energy accumulation and failed nucleation attempt.
+        :rtype: AnimationGroup
 
-            - Animation: The creation of the bubble fails due to lack of energy.
+        .. note::
+
+           This method only works with ``bubble_type="energy_discussion"``.
         """
         return AnimationGroup(
             self.vacuum_tracker.animate(run_time=rt, rate_func=rf).set_value(2),
@@ -376,15 +407,25 @@ class Bubble(Brane_General, Vacuum_General, Group):
 
     def create_bubble(
         self, rt: float = 0.2, rf: float = linear
-    ) -> Succession:  # The arrow associates this method with a class succession.
-        """Args::
+    ) -> Succession:
+        """
+        Animate bubble nucleation and display inside vacuum label.
 
-            - rt (float, optional): run_time animation. Defaults to 1.
-            - rf (float, optioanl): rate function. Defaults to linear.
+        The animation behavior varies by bubble type:
+        - ``"energy_discussion"``: Shows energy bar reaching threshold and successful nucleation.
+        - ``"em"``: Creates brane with electromagnetic field visualization.
+        - ``"strings"``: Creates brane and attached strings.
+        - ``"radiation"``: Creates brane and shows interior matter.
+        - Other types: Standard brane creation with inside text.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``0.2``.
+        :type rt: float
 
-            - Animation: Shows the creation of the bubble and its inside value of the scale curvature.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
+
+        :return: Animation sequence for bubble creation with type-specific elements.
+        :rtype: Succession
         """
         if self.bubble_type == "energy_discussion":
             return Succession(
@@ -425,17 +466,28 @@ class Bubble(Brane_General, Vacuum_General, Group):
 
     def expand_bubble(
         self, rt: float = 6, rf: float = linear, sca: float = 2.5
-    ) -> AnimationGroup:  # The arrow associates this method with a class animation.
-        """Args::
+    ) -> AnimationGroup:
+        """
+        Animate bubble expansion with type-specific physical effects.
 
-            - rt (float, optional): run_time animation. Defaults to 6.
-            - rf (float, optional): rate function. Defaults to linear.
-            - sca (float, optional): size for the scaling of the brane.
+        The expansion animation varies by bubble type:
+        - ``"energy_discussion"``: Shows energy transfer from bar to expanding bubble.
+        - ``"GW"``: Displays gravitational wave emission during expansion.
+        - ``"em"``: Expands brane with electromagnetic field.
+        - ``"strings"``: Stretches strings radially as brane expands.
+        - Other types: Standard brane scaling.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``6``.
+        :type rt: float
 
-            - Animation: Returns the expansion of the bubble. Denpeding on the type of bubble,
-            it automatically shows the evolution of energy densities in the bulk.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
+
+        :param sca: Scaling factor for bubble expansion. Default is ``2.5``.
+        :type sca: float
+
+        :return: Animation showing bubble expansion with physical effects.
+        :rtype: AnimationGroup or Succession
         """
         if self.bubble_type == "energy_discussion":
             return Succession(
@@ -476,14 +528,17 @@ class Bubble(Brane_General, Vacuum_General, Group):
             )
 
     def show_radius(self, rt: float = 1, rf: float = linear) -> Succession:
-        """Args::
+        """
+        Display the time-dependent radius label r = a(τ) for the bubble.
 
-            - rt (float, optional): run_time animation. Defaults to 1.
-            - rf (float, optional): rate function. Defaults to linear.
+        :param rt: Run time of the animation. Default is ``1``.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
 
-            - Succession: Shows the time dependence of the radius of the bubble.
+        :return: Animation showing radius line and time-dependent label.
+        :rtype: Succession
         """
         return Succession(
             self.in_text.animate.next_to(self.brane.get_center(), DOWN, buff=0.2),
