@@ -4,18 +4,34 @@ __all__ = ["Brane_General"]
 
 
 class Brane_General(VGroup):
-    """This is a mock-up class to load all inputs for branes and associated objects.
+    """
+    Base class providing common initialization parameters for brane objects.
 
-    - **Parameters**::
+    This is a mock-up class to centralize all input parameters related to branes
+    and associated objects, including color, size, opacity, and stroke properties.
 
-        - brane_color (ParsableManimColor, optional): filling in color of the brane.
-        Defaults to RED.
-        - brane_fill_opa (float, optional): Recall that fill opacity will become slightly
-        when we go lower in AdS scale. Defaults to 0.1.
-        - brane_radius (float, optional): Initial size of brane. Defaults to 1.
-        - brane_text_color (ParsableManimColor, optional): Defaults to WHITE.
-        - brane_stroke_w: (float, optional). Defaults to 0.2.
+    :param brane_color: Filling color of the brane. Default is ``RED``.
+    :type brane_color: ParsableManimColor
 
+    :param brane_radius: Initial size (radius) of the brane. Default is ``1``.
+    :type brane_radius: float
+
+    :param brane_fill_opa: Fill opacity of the brane. Note that fill opacity may vary
+        when representing different AdS scales. Default is ``0.1``.
+    :type brane_fill_opa: float
+
+    :param brane_stroke_w: Stroke width of the brane border. Default is ``0.2``.
+    :type brane_stroke_w: float
+
+    :param brane_text_color: Color of text elements associated with the brane. Default is ``WHITE``.
+    :type brane_text_color: ParsableManimColor
+
+    :param kwargs: Additional keyword arguments passed to :class:`VGroup`.
+
+    .. note::
+
+       This class is designed to be inherited by other brane-related classes
+       to ensure consistent parameter handling across different brane representations.
     """
 
     def __init__(
