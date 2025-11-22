@@ -28,6 +28,11 @@ def import_template(module_name: str):
         - ``"cosmic_dawn"`` - Warm sunrise colors for cosmological scenarios
         - ``"quantum_dusk"`` - Deep purples and blues for quantum/string effects
         - ``"dark_energy"`` - Dark backgrounds with energy-themed accents
+        - ``"green_mint"`` - Fresh green palette (mapped from beanim)
+        - ``"blue_ice"`` - Cool blue palette (mapped from beanim)
+        - ``"red_autumn"`` - Warm red/orange palette (mapped from beanim)
+        - ``"beamer_blue"`` - Professional blue theme for presentations
+        - ``"beamer_green"`` - Professional green theme for presentations
         - ``"default_template"`` (fallback) - Black and white default styling
 
     **Example usage:**
@@ -45,7 +50,16 @@ def import_template(module_name: str):
                 bubble = Bubble(bubble_type="empty")
                 self.add(bubble)
     """
-    allowed_modules = ["cosmic_dawn", "quantum_dusk", "dark_energy"]
+    allowed_modules = [
+        "cosmic_dawn", 
+        "quantum_dusk", 
+        "dark_energy",
+        "green_mint",
+        "blue_ice",
+        "red_autumn",
+        "beamer_blue",
+        "beamer_green"
+    ]
 
     # Import template
     if module_name in allowed_modules:
