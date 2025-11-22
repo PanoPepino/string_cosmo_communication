@@ -4,17 +4,38 @@ __all__ = ["Vacuum_General"]
 
 
 class Vacuum_General(VGroup):
-    """General class to load all inputs related to color and shape of vacua.
+    """
+    Base class providing common initialization parameters for vacuum objects.
 
-    - **Parameters**::
+    This class centralizes all input parameters related to the color, shape,
+    and appearance of vacuum representations in string cosmology visualizations.
 
-        - vacuum_color (ParsableManimColor, optional): Defaults to RED.
-        - vacuum_fill_opa (float, optional): Defaults to 0.2.
-        - vacuum_stroke_w: (float, optional). Defaults to 0.2.
-        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.
-        - corner_rad_direction (list, optional): which corners of the surrounding rectangle
-        get rounded. Defaults to [0, 0, 0, 0].
+    :param vacuum_color: Color of the vacuum representation. Default is ``RED``.
+    :type vacuum_color: ParsableManimColor
 
+    :param vacuum_fill_opa: Fill opacity of the vacuum. Default is ``0.2``.
+    :type vacuum_fill_opa: float
+
+    :param vacuum_stroke_w: Stroke width of the vacuum border. Default is ``0.2``.
+    :type vacuum_stroke_w: float
+
+    :param vacuum_text_color: Color of text elements associated with the vacuum. Default is ``WHITE``.
+    :type vacuum_text_color: ParsableManimColor
+
+    :param corner_rad: Corner radius of the surrounding box. Default is ``0``.
+    :type corner_rad: float
+
+    :param corner_rad_direction: List of four integers controlling which corners of the
+        surrounding rectangle get rounded: [top-left, top-right, bottom-right, bottom-left].
+        Default is ``[0, 0, 0, 0]``.
+    :type corner_rad_direction: list[int]
+
+    :param kwargs: Additional keyword arguments passed to :class:`VGroup`.
+
+    .. note::
+
+       This class is designed to be inherited by other vacuum-related classes
+       to ensure consistent parameter handling across different vacuum representations.
     """
 
     def __init__(

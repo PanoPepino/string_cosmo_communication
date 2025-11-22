@@ -5,42 +5,55 @@ __all__ = ["Black_Hole"]
 
 
 class Black_Hole(Brane_General, VGroup):
-    """This class creates a black hole group that can potentialy emmit a brane. See Brane General for further information.
+    """
+    Create a black hole group that can potentially emit a brane.
+
+    This class visualizes different types of black holes in string cosmology,
+    including fragmentation scenarios (AdS fragmentation à la Maldacena) and
+    spinning black holes. The expanding bubble is always the last (``[-1]``) element
+    of the object.
+
+    :param bh_size: Size (radius) of the black hole. Default is ``brane_radius`` from
+        :class:`Brane_General` (typically 1).
+    :type bh_size: float
+
+    :param bh_color: Color of the black hole. Default is ``BLACK``.
+    :type bh_color: ParsableManimColor
+
+    :param bh_fill_opa: Fill opacity of the black hole. Default is ``0.8``.
+    :type bh_fill_opa: float
+
+    :param bh_type: Type of black hole visualization. Options:
+        - ``"fragmentation"``: Shows Q > T text, representing brane nucleation via AdS fragmentation.
+        - ``"spinning"``: Shows theta and mu parameters for a rotating black hole.
+        - ``"none"``: Empty black hole without text labels.
+        Default is ``"none"``.
+    :type bh_type: str
+
+    :param kwargs: Additional keyword arguments passed to :class:`Brane_General` and :class:`VGroup`.
 
     .. note::
 
-       Obs! the expanding bubble will always be the [-1] element of the object.
+       The expanding bubble (brane) is always accessible as the last element (``[-1]``) of the object.
+       See :class:`Brane_General` for additional inherited parameters.
 
-    - **Parameters**::
+    **Example usage:**
 
-        - bh_size (float, optional): Defaults to brane_radius= 1.
-        - bh_color (ParsableManimColor, optional): Defaults to Black.
-        - bh_fill_opa (float, optional): Defaults to 0.8.
-        - bh_type:
-            - "fragmentation": the written elements will be Q > T, corresponding to
-            the nucleation of a brane a la AdS fragmentation by Maldacena.
-            - "spinning": written elements will be theta and mu, as in the rotating black
-            hole.
-            - none: empty black hole. No text.
+    .. code-block:: python
 
-    - **Example**::
-
-        from manim  import *
-        from beanim import *
+        from manim import *
+        from anim_theoretical import Black_Hole
 
         class Example_Black_Hole(Scene):
             def construct(self):
-                bh_sp= Black_Hole(bh_type= "spinning")
-                bh_frag= Black_Hole(bh_type= "fragmentation")
-                bh= Black_Hole()
-                bh_group= VGroup(bh_sp, bh_frag, bh).arrange(RIGHT, buff= 3)
+                bh_sp = Black_Hole(bh_type="spinning")
+                bh_frag = Black_Hole(bh_type="fragmentation")
+                bh = Black_Hole()
+                bh_group = VGroup(bh_sp, bh_frag, bh).arrange(RIGHT, buff=3)
                 bh_group.scale_to_fit_width(config.frame_width-1)
                 self.add(bh_group)
-                self.play(AnimationGroup(map(lambda x: x.nucleate(), bh_group)))
-                self.play(AnimationGroup(map(lambda x: x.expand(), bh_group)))
-
-    - **Methods**::
-
+                self.play(AnimationGroup(*[x.nucleate() for x in bh_group]))
+                self.play(AnimationGroup(*[x.expand() for x in bh_group]))
     """
 
     def __init__(
@@ -101,15 +114,20 @@ class Black_Hole(Brane_General, VGroup):
     def nucleate(
         self, rt: float = 0.5, rf: float = linear, scaling: float = 1.1
     ) -> Animation:
-        """Args::
+        """
+        Animate the nucleation of a brane through the black hole horizon.
 
-            - rt (float, optional): Run time animation. Defaults to 3.
-            - rf (float, optional): Rate funciton. Defaults to linear.
-            - scaling (float, optional): How much it scales. Defaults to 1.1.
+        :param rt: Run time of the animation. Default is ``0.5``.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
 
-            - Animation: Nucleation of the brane through the horizon of the black hole.
+        :param scaling: Scaling factor for the brane during nucleation. Default is ``1.1``.
+        :type scaling: float
+
+        :return: Animation showing brane nucleation through the horizon.
+        :rtype: AnimationGroup
         """
         return AnimationGroup(
             self.brane.animate(run_time=rt, rate_func=rf).scale(scaling)
@@ -118,15 +136,23 @@ class Black_Hole(Brane_General, VGroup):
     def expand(
         self, rt: float = 3, rf: float = linear, scaling: float = 2.5
     ) -> Animation:
-        """Args::
+        """
+        Animate the expansion of the nucleated brane.
 
-            - rt (float, optional): Defaults to 3.
-            - rf (float, optional): Defaults to linear.
-            - scaling (float, optional): Defaults to 2.5.
+        For spinning black holes (``bh_type="spinning"``), this also animates the
+        theta parameter moving along its circular path.
 
-        Returns::
+        :param rt: Run time of the animation. Default is ``3``.
+        :type rt: float
 
-            - Animation: Expansion of the brane.
+        :param rf: Rate function controlling animation timing. Default is ``linear``.
+        :type rf: function
+
+        :param scaling: Scaling factor for the brane expansion. Default is ``2.5``.
+        :type scaling: float
+
+        :return: Animation showing brane expansion. For spinning type, includes theta motion.
+        :rtype: AnimationGroup
         """
         if self.bh_type == "spinning":
             return AnimationGroup(
