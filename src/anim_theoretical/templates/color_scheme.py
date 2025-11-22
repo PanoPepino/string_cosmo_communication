@@ -1,74 +1,58 @@
 import importlib
 
+from ..my_imports import *
+
 __all__ = ["import_template"]
 
-# The following lines allow you to choose between different templates for each of the objects of the presentation.
-# If you choose no template from the list, manim will render the default configuration (B/W).
-# If you would like to create a new template, go to beanim/src/templates and create a new template.
-# Modify such template at your will and add it allowed_modules in this script and to the print list.
 
+def import_template(module_name: str):
+    """
+    Import a chosen template to standardize styling across all string cosmology objects.
 
-def import_template(module_name):
-    """This function, at the beginning of your main.py file, allows you to call one template among different ones. If this function is not called, beanim will provide a default B/W template.
+    This function loads a predefined color and styling template that will be applied
+    to all subsequent string cosmology visualization objects created in the scene.
+    It helps maintain visual consistency across presentations and animations.
 
-    - Returns::
+    :param module_name: Name of the template to import. Must be one of the allowed templates.
+    :type module_name: str
 
-        - The chosen template homogenised over all your objects.
+    :raises ModuleNotFoundError: If the specified template module cannot be found.
 
-    - **Example**::
+    .. note::
+
+       This function should be called at the beginning of your script before defining
+       your Scene class to ensure the template is properly loaded before any objects
+       are created.
+
+    **Available templates:**
+        - ``"cosmic_dawn"`` - Warm sunrise colors for cosmological scenarios
+        - ``"quantum_dusk"`` - Deep purples and blues for quantum/string effects
+        - ``"dark_energy"`` - Dark backgrounds with energy-themed accents
+        - ``"default_template"`` (fallback) - Black and white default styling
+
+    **Example usage:**
+
+    .. code-block:: python
 
         from manim import *
-        from beanim import *
+        from anim_theoretical import *
 
-        import_template('fancy_mint')
+        import_template('cosmic_dawn')
 
-    - The templates looks as follow:
-
-    **B/W**
-
-    .. image:: media/images/t_slide_bw.png
-        :width: 49%
-    .. image:: media/images/g_slide_bw.png
-        :width: 49%
-
-    **fancy_mint**
-
-    .. image:: media/images/t_slide_fm.png
-        :width: 49%
-    .. image:: media/images/g_slide_fm.png
-        :width: 49%
-
-    **dark_depths**
-
-    .. image:: media/images/t_slide_dd.png
-        :width: 49%
-    .. image:: media/images/g_slide_dd.png
-        :width: 49%
-
+        class MyCosmologyScene(Scene):
+            def construct(self):
+                # Your string cosmology objects will now use the selected template
+                bubble = Bubble(bubble_type="empty")
+                self.add(bubble)
     """
-    allowed_modules = ["fancy_mint", "dark_depths"]
+    allowed_modules = ["cosmic_dawn", "quantum_dusk", "dark_energy"]
+
+    # Import template
     if module_name in allowed_modules:
-        try:
-            module = importlib.import_module(
-                "beanim.templates." + module_name
-            )  # It seems one has to specify all the way down to the module
-            print(
-                "-------------------------------------------------------------------------------"
-            )
-            print(f"Successfully imported template -> {module_name}")
-            return module
-        except ImportError:
-            return None
-    if module_name not in allowed_modules:
-        try:
-            print(
-                "-------------------------------------------------------------------------------"
-            )
-            print(
-                "Template with the given name does not exit. I will use the default template (B/W) instead."
-            )
-            module = importlib.import_module(
-                "beanim.templates.template_0"
-            )  # It seems one has to specify all the way down to the module
-        except ImportError:
-            return None
+        module_path = f"anim_theoretical.templates.collection.{module_name}"
+        print(f"Using '{module_name}' template for string cosmology visualizations!")
+    else:
+        print(f"Template '{module_name}' does not exist. Using default template instead.")
+        module_path = "anim_theoretical.templates.collection.default_template"
+
+    importlib.import_module(module_path)
