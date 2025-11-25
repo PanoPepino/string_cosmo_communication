@@ -19,8 +19,8 @@ This repository contains **String Cosmology Communication** (formerly mtheoretic
 
 The package provides scientifically accurate objects and templates to help researchers, educators, and enthusiasts communicate complex theoretical physics ideas through engaging animations.
 
-> **⚠️ Important Note**  
-> The package is imported as **anim_theoretical** in your Python files. However, documentation and the repository use the name **string_cosmo_communication** for clarity.
+> **📦 Package Name**  
+> The package is imported as **manim_string_cosmo** in your Python files.
 
 
 
@@ -57,10 +57,10 @@ Available templates:
 
 ```python
 from manim import *
-from anim_theoretical import *
+from manim_string_cosmo import *
 
 # Import a template for consistent styling
-import_template('cosmic_dawn')
+import_string_cosmo_template('cosmic_dawn')
 
 class StringCosmologyScene(Scene):
     def construct(self):
@@ -118,7 +118,7 @@ To **use** in your Manim files:
 
 ```python
 from manim import *
-from anim_theoretical import *
+from manim_string_cosmo import *
 ```
 
 For detailed usage instructions and API reference, visit the [📚 documentation](https://panopepino.github.io/string_cosmo_communication/).
@@ -131,7 +131,7 @@ Quickly change the entire look of your animations:
 
 ```python
 # At the beginning of your script
-import_template('beamer_blue')  # Professional blue theme
+import_string_cosmo_template('beamer_blue')  # Professional blue theme
 
 # All subsequent objects will use this template
 class MyScene(Scene):
