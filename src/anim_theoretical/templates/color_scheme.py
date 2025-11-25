@@ -1,50 +1,69 @@
 import importlib
-import sys
 
-try:
-    from template_registry import ACTIVE_TEMPLATE
-except ImportError:
-    ACTIVE_TEMPLATE = None
+from ..my_imports import *
 
-__all__ = ["import_template"]
+__all__ = ["import_string_cosmo_template"]
 
-def import_template(module_name: str):
+
+def import_string_cosmo_template(module_name: str):
     """
-    Import a chosen template, synced globally with beanim if used together.
+    Import a chosen template to standardize styling for string cosmology visualizations.
+
+    This function loads a predefined color and styling template that will be applied
+    to all subsequent string_cosmo objects created in the scene. It helps maintain visual
+    consistency across string theory and cosmology animations.
+
+    :param module_name: Name of the template to import. Must be one of the allowed templates.
+    :type module_name: str
+
+    :raises ModuleNotFoundError: If the specified template module cannot be found.
+
+    .. note::
+
+       This function should be called before defining your Scene class to ensure
+       the template is properly loaded before any string_cosmo objects are created.
+
+    **Available templates:**
+        - ``"cosmic_dawn"``
+        - ``"quantum_dusk"``
+        - ``"dark_energy"``
+        - ``"green_mint"``
+        - ``"blue_ice"``
+        - ``"red_autumn"``
+        - ``"beamer_blue"``
+        - ``"beamer_green"``
+        - ``"default_template"`` (fallback)
+
+    **Example usage:**
+
+    .. code-block:: python
+
+        from anim_theoretical import *
+
+        import_string_cosmo_template('cosmic_dawn')
+
+        class MyScene(Scene):
+            def construct(self):
+                # Your string_cosmo objects will now use the selected template
+                pass
     """
-    global ACTIVE_TEMPLATE
-    already_set = False
-    # Detect external setting via registry (set by beanim or another import)
-    if 'template_registry' in sys.modules:
-        registry = sys.modules['template_registry']
-        if hasattr(registry, 'ACTIVE_TEMPLATE') and registry.ACTIVE_TEMPLATE:
-            module_name = registry.ACTIVE_TEMPLATE
-            already_set = True
-        else:
-            registry.ACTIVE_TEMPLATE = module_name
-    else:
-        ACTIVE_TEMPLATE = module_name
     allowed_modules = [
-        "cosmic_dawn", 
-        "quantum_dusk", 
+        "cosmic_dawn",
+        "quantum_dusk",
         "dark_energy",
         "green_mint",
         "blue_ice",
         "red_autumn",
         "beamer_blue",
-        "beamer_green",
-        "default_template"
+        "beamer_green"
     ]
+
+    # Import base template
     if module_name in allowed_modules:
         module_path = f"anim_theoretical.templates.collection.{module_name}"
-        print(f"Using '{module_name}' template for string cosmology visualizations!")
+        print(f"Using '{module_name}' template for string cosmology!")
     else:
-        print(f"Template '{module_name}' does not exist. Using default template instead.")
+        print(f"Template '{module_name}' does not exist. Using default template instead!")
         module_path = "anim_theoretical.templates.collection.default_template"
+
     importlib.import_module(module_path)
-    if not already_set:
-        import importlib.util
-        spec = importlib.util.find_spec("template_registry")
-        if spec is not None:
-            module = importlib.util.module_from_spec(spec)
-            module.ACTIVE_TEMPLATE = module_name
