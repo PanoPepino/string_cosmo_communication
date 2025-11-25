@@ -15,12 +15,12 @@
 
 ## 📚 About String Cosmology Communication
 
-This repository contains **String Cosmology Communication** (formerly mtheoretical), a Manim library designed for creating beautiful animations and visualizations of string theory and braneworld cosmology concepts.
+This repository contains **String Cosmology Communication** (formerly mtheoretical), a Manim library designed for creating animations and visualizations of string theory and braneworld cosmology concepts.
 
-The package provides scientifically accurate objects and templates to help researchers, educators, and enthusiasts communicate complex theoretical physics ideas through engaging animations.
+The package provides skecthed objects and templates to help researchers communicate complex string theoretical physics ideas.
 
 > **⚠️ Important Note**  
-> The package is imported as **anim_theoretical** in your Python files. However, documentation and the repository use the name **string_cosmo_communication** for clarity.
+> The package is imported as **manim_string_cosmo_communication** in your Python files. However, documentation and the repository use the name **string_cosmo_communication** for clarity.
 
 
 
@@ -30,9 +30,9 @@ The package provides scientifically accurate objects and templates to help resea
 
 - **🌌 Branes**: Domain walls, D-branes, and brane configurations
 - **🌠 Vacuum States**: Different vacuum configurations and transitions
-- **💥 Bubble Universes**: Nucleation and bubble collisions
+- **💥 Bubble Universes**: Nucleation and bubble evolution
 - **⚫ Black Holes**: Higher-dimensional black holes
-- **🔴 AdS Spaces**: Anti-de Sitter spaces and junctions
+- **🔴 AdS Spaces**: Anti-de Sitter spaces and junction conditions
 
 ### Template System
 
@@ -82,20 +82,10 @@ class StringCosmologyScene(Scene):
   <sub><i>Template comparison images will be added soon</i></sub>
 </div>
 
-### Advanced Examples
-
-Check out research talks and presentations using this library:
-
-- Bubble nucleation animations
-- Brane collision scenarios  
-- AdS/CFT visualizations
-- Black hole formation in braneworlds
-
-*More examples and video demonstrations coming soon!*
 
 
 
-## Installation
+### Install String Cosmology Communication
 
 ### Prerequisites
 
@@ -103,8 +93,6 @@ Make sure you have:
 - Python 3.8 or higher
 - [Manim Community Edition](https://docs.manim.community/en/stable/installation.html)
 - Git
-
-### Install String Cosmology Communication
 
 To **install** this library:
 
@@ -118,11 +106,10 @@ To **use** in your Manim files:
 
 ```python
 from manim import *
-from anim_theoretical import *
+from manim_string_cosmo import *
 ```
 
 For detailed usage instructions and API reference, visit the [📚 documentation](https://panopepino.github.io/string_cosmo_communication/).
-
 
 
 ## Template System
@@ -144,32 +131,6 @@ class MyScene(Scene):
 See the [Template Guide](https://panopepino.github.io/string_cosmo_communication/) for detailed information on all available templates.
 
 
-
-## Research Applications
-
-This library has been used to create visualizations for:
-
-- 🎯 Research presentations at conferences
-- 📝 Explanatory animations for papers
-- 🏛️ Outreach and educational content
-- 📺 YouTube videos on string cosmology
-
-If you use this library in your research or outreach, let us know!
-
-
-
-## Future Features
-
-Planned additions for upcoming versions:
-
-- 🎬 **Animation Presets**: Common cosmological scenarios ready to use
-- 📏 **More Objects**: Gravitons, moduli fields, flux compactifications
-- 📐 **Extended Templates**: More color schemes for different presentation contexts
-- 📦 **Example Gallery**: Comprehensive library of ready-to-use animations
-- 📚 **Tutorial Videos**: Step-by-step guides for common visualizations
-
-
-
 ## Contributing
 
 Contributions are welcome! Whether you:
@@ -180,17 +141,6 @@ Contributions are welcome! Whether you:
 - Want to improve documentation
 
 Please open an issue or submit a pull request on [GitHub](https://github.com/PanoPepino/string_cosmo_communication/issues).
-
-
-
-## Acknowledgments
-
-Special thanks to:
-
-- The [Manim Community](https://www.manim.community/) for creating such a powerful animation engine
-- Jérome Eertmans for the excellent [Manim-Slides](https://manim-slides.eertmans.be/) package
-- The string theory and cosmology research community for inspiration
-
 
 
 ## 💖 Support My Work
@@ -204,14 +154,19 @@ If you find this project helpful, consider supporting its development. Thank you
 </p>
 
 
+<!--
 
-## License
+TO DO:
 
-MIT License - see LICENSE file for details
+- Return for beanim and string_cosmo the import function to normal state. Change name so that import_beanim import_string_cosmo are for each them. 
+- Double check that templates created for beanim and string_cosmo make sense in colouring and stuff.
 
+>
 
----
+<!--
+Log of changes:
 
-<div align="center">
-  <sub>Built with ❤️ for the string cosmology community</sub>
-</div>
+- 2025/11/25: Removed. Quite complicated.
+- 2025/11/25: Changed color template stuff so that it can inherit template from beanim if used with that package.
+
+>

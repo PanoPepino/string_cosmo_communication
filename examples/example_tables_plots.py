@@ -1,5 +1,5 @@
 from manim import *
-from anim_theoretical import *
+from manim_string_cosmo import *
 
 import_template("dark_depths")
 

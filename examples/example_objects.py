@@ -1,7 +1,22 @@
-from manim import *
-from anim_theoretical import *
+# test_template_sync.py
 
-import_template("fancy_mint")
+from manim_string_cosmo import *
+from manim_beanim import *
+from manim import *
+
+# Scenario 1: Using beanim first
+print("=== Test 1: Beanim sets template ===")
+import_template('green_mint')
+import_template('green_mint')
+
+# string_cosmo should detect and use blue_ice
+
+
+class Test(Scene):
+    def construct(self):
+        t1 = Title_Section(content="Test")
+        t2 = AdS_Jc(vacua_type="DB")
+        self.add(t1, t2)
 
 
 class Example_AdS_Jc(Scene):

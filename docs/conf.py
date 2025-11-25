@@ -19,7 +19,7 @@ import sys
 
 # Add the parent directory to sys.path to find your package
 sys.path.insert(0, os.path.abspath('../src'))
-sys.path.insert(0, os.path.abspath('../src/anim_theoretical'))
+sys.path.insert(0, os.path.abspath('../src/manim_string_cosmo'))
 
 
 # -- Project information -----------------------------------------------------

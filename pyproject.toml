@@ -23,7 +23,7 @@ dynamic = ["readme", "version"]
 keywords = ["manim", "research", "animations"]
 license = "MIT"
 license-files = ["LICENSE*"]  # Glob pattern for license files
-name = "anim_theoretical"
+name = "manim_string_cosmo"
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
@@ -38,7 +38,7 @@ Documentation = "to be added"
 Repository = "to be added"
 
 [tool.hatch.version]
-path = "src/anim_theoretical/__version__.py"
+path = "src/manim_string_cosmo/__version__.py"
 
 [tool.ruff.lint]
 extend-ignore = []
@@ -47,7 +47,7 @@ extend-select = [
   "I",  # Isort
   "TID",  # https://docs.astral.sh/ruff/rules/relative-imports/
 ]
-isort = {known-first-party = ["anim_theoretical"]}
+isort = {known-first-party = ["string_cosmo"]}
 
 [tool.uv]
 dev-dependencies = [
