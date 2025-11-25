@@ -38,7 +38,7 @@ def import_string_cosmo_template(module_name: str):
 
     .. code-block:: python
 
-        from anim_theoretical import *
+        from manim_string_cosmo import *
 
         import_string_cosmo_template('cosmic_dawn')
 
@@ -60,10 +60,10 @@ def import_string_cosmo_template(module_name: str):
 
     # Import base template
     if module_name in allowed_modules:
-        module_path = f"anim_theoretical.templates.collection.{module_name}"
+        module_path = f"manim_string_cosmo.templates.collection.{module_name}"
         print(f"Using '{module_name}' template for string cosmology!")
     else:
         print(f"Template '{module_name}' does not exist. Using default template instead!")
-        module_path = "anim_theoretical.templates.collection.default_template"
+        module_path = "manim_string_cosmo.templates.collection.default_template"
 
     importlib.import_module(module_path)
