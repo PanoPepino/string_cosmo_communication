@@ -1,7 +1,7 @@
 from manim import *
-from anim_theoretical import *
+from manim_string_cosmo import *
 
-import_template("dark_depths")
+import_string_cosmo_template("dark_depths")
 
 
 class Example_Table_Summary_Bubble_and_Scales(Scene):
