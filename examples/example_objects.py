@@ -1,7 +1,7 @@
 from manim import *
-from anim_theoretical import *
+from manim_string_cosmo import *
 
-import_template("fancy_mint")
+import_string_cosmo_template("fancy_mint")
 
 
 class Example_AdS_Jc(Scene):
