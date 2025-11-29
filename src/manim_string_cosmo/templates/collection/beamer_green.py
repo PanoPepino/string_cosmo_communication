@@ -1,5 +1,6 @@
 from ...my_imports import *
 from ...objects import *
+from ...tables_and_plots import *
 
 # BEAMER GREEN TEMPLATE
 # Professional green theme inspired by classic Beamer presentations
@@ -55,4 +56,36 @@ Black_Hole.set_default(
 Bubble.set_default(
     string_color=beamer_green["string_color"],
     field_top_color=beamer_green["field_top_color"],
+)
+
+Table_General.set_default(
+    text_color=beamer_green["brane_color"],
+    hlight_1_color=beamer_green["brane_color"],
+    hlight_2_color=beamer_green["vacuum_color"],
+    hlight_3_color=beamer_green["bh_color"],
+    decorator_color=beamer_green["arrow_color"],
+    decorator_stroke_w=beamer_green["brane_stroke_w"],
+    corner_rad=beamer_green["corner_rad"],
+    corner_rad_direction=beamer_green["corner_rad_direction"],
+    stroke_w=beamer_green["brane_stroke_w"],
+    stroke_opa=1,
+    fill_opa=beamer_green["brane_fill_opa"],
+)
+
+Plot_General.set_default(
+    func_main_color=beamer_green["brane_color"],
+    func_2_color=beamer_green["vacuum_color"],
+    func_3_color=beamer_green["bh_color"],
+    text_color=beamer_green["brane_text_color"],
+    axis_opacity=0.5,
+    axis_stroke=beamer_green["brane_stroke_w"],
+    decorator_presence="box",
+    decorator_color=beamer_green["arrow_color"],
+    decorator_stroke_w=beamer_green["brane_stroke_w"],
+    corner_rad=beamer_green["corner_rad"],
+    corner_rad_direction=beamer_green["corner_rad_direction"],
+    fill_opa=beamer_green["brane_fill_opa"],
+    stroke_w=beamer_green["brane_stroke_w"],
+    stroke_opa=1,
+    tightness=0.3,
 )
