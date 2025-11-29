@@ -1,6 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
+from manim_slides.templates import TexFontTemplates
 
 # BEAMER GREEN TEMPLATE
 # Professional green theme inspired by classic Beamer presentations
@@ -22,10 +23,15 @@ beamer_green = {
     "bh_fill_opa": 0.9,  # High opacity
     "string_color": "#C6FF7C",  # Lightest green for strings
     "field_top_color": "#096E30",  # Deep green for field tops
+    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
 }
 
 # Apply background
 config.background_color = beamer_green["bg_color"]
+
+# Set TeX font defaults
+Tex.set_default(tex_template=beamer_green['tex_temp'])
+MathTex.set_default(tex_template=beamer_green['tex_temp'])
 
 # Set defaults for string cosmology classes
 Brane_General.set_default(

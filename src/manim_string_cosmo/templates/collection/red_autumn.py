@@ -1,6 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
+from manim_slides.templates import TexFontTemplates
 
 # RED AUTUMN TEMPLATE
 # Warm autumn palette with rich red and orange tones
@@ -22,10 +23,15 @@ red_autumn = {
     "bh_fill_opa": 0.9,  # High opacity
     "string_color": "#C0392B",  # Deep red for strings
     "field_top_color": "#C0392B",  # Deep red for field tops
+    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
 }
 
 # Apply background
 config.background_color = red_autumn["bg_color"]
+
+# Set TeX font defaults
+Tex.set_default(tex_template=red_autumn['tex_temp'])
+MathTex.set_default(tex_template=red_autumn['tex_temp'])
 
 # Set defaults for string cosmology classes
 Brane_General.set_default(

@@ -1,6 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
+from manim_slides.templates import TexFontTemplates
 
 # COSMIC DAWN TEMPLATE
 # Vibrant energy-themed palette with dark cosmic background
@@ -22,10 +23,15 @@ cosmic_dawn = {
     "bh_fill_opa": 0.15,  # Light opacity
     "string_color": "#4D96FF",  # Bright blue for strings
     "field_top_color": "#FF6B6B",  # Coral for field tops
+    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
 }
 
 # Apply background
 config.background_color = cosmic_dawn["bg_color"]
+
+# Set TeX font defaults
+Tex.set_default(tex_template=cosmic_dawn['tex_temp'])
+MathTex.set_default(tex_template=cosmic_dawn['tex_temp'])
 
 # Set defaults for string cosmology classes
 Brane_General.set_default(

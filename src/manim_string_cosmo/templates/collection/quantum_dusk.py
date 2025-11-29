@@ -1,6 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
+from manim_slides.templates import TexFontTemplates
 
 # QUANTUM DUSK TEMPLATE
 # Dusky purple theme with warm accent colors
@@ -22,10 +23,15 @@ quantum_dusk = {
     "bh_fill_opa": 0.9,  # High opacity
     "string_color": "#D4A5A5",  # Dusty rose for strings
     "field_top_color": "#D4A5A5",  # Dusty rose for field tops
+    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
 }
 
 # Apply background
 config.background_color = quantum_dusk["bg_color"]
+
+# Set TeX font defaults
+Tex.set_default(tex_template=quantum_dusk['tex_temp'])
+MathTex.set_default(tex_template=quantum_dusk['tex_temp'])
 
 # Set defaults for string cosmology classes
 Brane_General.set_default(

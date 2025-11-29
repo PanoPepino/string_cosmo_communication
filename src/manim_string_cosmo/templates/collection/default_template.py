@@ -1,6 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
+from manim_slides.templates import TexFontTemplates
 
 # DEFAULT TEMPLATE
 # Classic black and white theme with high contrast
@@ -22,10 +23,15 @@ default_template = {
     "bh_fill_opa": 0.2,  # Light opacity
     "string_color": "#FFFFFF",  # White for strings
     "field_top_color": "#FFFFFF",  # White for field tops
+    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
 }
 
 # Apply background
 config.background_color = default_template["bg_color"]
+
+# Set TeX font defaults
+Tex.set_default(tex_template=default_template['tex_temp'])
+MathTex.set_default(tex_template=default_template['tex_temp'])
 
 # Set defaults for string cosmology classes
 Brane_General.set_default(
