@@ -131,7 +131,7 @@ wheels = [
 ]
 
 [[package]]
-name = "beanim"
+name = "manim_string_cosmo"
 source = { editable = "." }
 dependencies = [
     { name = "manim" },
@@ -151,7 +151,7 @@ tests = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "beanim", extra = ["docs", "tests"] },
+    { name = "manim_string_cosmo", extra = ["docs", "tests"] },
     { name = "pre-commit" },
 ]
 
@@ -166,7 +166,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "beanim", extras = ["docs", "tests"] },
+    { name = "manim_string_cosmo", extras = ["docs", "tests"] },
     { name = "pre-commit", specifier = ">=3.5.0" },
 ]
 

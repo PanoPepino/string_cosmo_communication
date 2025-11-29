@@ -6,7 +6,7 @@ import sys
 
 # To update or create new documentation, do as follows:
 # 1) Navigate to your package (not the src folder) and create a docs folder.
-# 2) In docs folder, run sphinx-apidoc -o ./api ../src/anim_theoretical. This will load all modules information inside the folder api, for simplicity and clean set up when creating html
+# 2) In docs folder, run sphinx-apidoc -o ./api ../src/manim_string_cosmo. This will load all modules information inside the folder api, for simplicity and clean set up when creating html
 # 3) Modify your conf.py file to the right path. Copy and paste this conf.py file. It is quite complete.
 # 4) Modify your index.rst to include a nice presentation and stuff. You can create additional .rst files in other folders or ar the same level. In the ..toctree of index.rst, you can just add those files with extra info. This ..toctree will include an api/modules reference.
 # 5) Go to api/modules.rst and modify it so that it display your desired modules.
@@ -19,7 +19,7 @@ import sys
 
 # Add the parent directory to sys.path to find your package
 sys.path.insert(0, os.path.abspath('../src'))
-sys.path.insert(0, os.path.abspath('../src/anim_theoretical'))
+sys.path.insert(0, os.path.abspath('../src/manim_string_cosmo'))
 
 
 # -- Project information -----------------------------------------------------
@@ -75,7 +75,7 @@ html_extra_path = ['.nojekyll']
 
 
 # To modify apparence of modules inside the documentation
-add_module_names = False                        # This avoids long names like anim_theoretical.objects....class_name
+add_module_names = False                        # This avoids long names like manim_string_cosmo.objects....class_name
 toc_object_entries = True                       # This allows to show the table of content-list to the right of the screen
 toc_object_entries_show_parents = "hide"        # This avoids showing the parents of each class or function
 # This makes that the class name goes alongs, without any parameters inside. Everything is loaded in __init__.
@@ -100,7 +100,7 @@ def clean_api_titles(api_dir="docs/source/api"):
             title_line = lines[0].strip()
             # Unescape underscores for processing
             decoded_title = title_line.replace("\\_", "_")
-            # Match: e.g. anim_theoretical.objects.bubble module
+            # Match: e.g. manim_string_cosmo.objects.bubble module
             found = re.match(r"^([\w\.]+) (package|module)$", decoded_title)
             if found:
                 leaf = found.group(1).split(".")[-1]

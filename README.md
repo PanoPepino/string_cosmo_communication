@@ -204,14 +204,19 @@ If you find this project helpful, consider supporting its development. Thank you
 </p>
 
 
+<!--
+Change Log:
 
-## License
+2025/11/29: - Templates and color palettes updated.
+            - Docstrings corrected.
+            - 
 
-MIT License - see LICENSE file for details
 
 
----
+TO DO LIST:
 
-<div align="center">
-  <sub>Built with ❤️ for the string cosmology community</sub>
-</div>
+
+- To rewrite all templates so that Tex and MathTex have same font as in beanim (Tex, MathTex default)
+- Fix issue with gravitational waves in some colors.
+
+>

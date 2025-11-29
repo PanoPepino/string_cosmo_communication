@@ -44,7 +44,7 @@ To use the library in your Manim scripts:
 .. code-block:: python
 
    from manim import *
-   from anim_theoretical import *
+   from manim_string_cosmo import *
 
    # Import a template (optional but recommended)
    import_template('cosmic_dawn')
@@ -63,7 +63,7 @@ To verify that the installation was successful, try running a simple test:
 
 .. code-block:: python
 
-   from anim_theoretical import *
+   from manim_string_cosmo import *
    print("String Cosmology Communication installed successfully!")
 
 If no errors appear, you're ready to start creating string cosmology animations!

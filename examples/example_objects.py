@@ -1,7 +1,7 @@
 from manim import *
 from manim_string_cosmo import *
 
-import_string_cosmo_template("fancy_mint")
+import_string_cosmo_template("beamer_green")
 
 
 class Example_AdS_Jc(Scene):
@@ -24,7 +24,7 @@ class Example_AdS_Jc(Scene):
             )
         )
         self.play(show.animate.shift(2 * UP))
-        self.play(FadeOut(show))
+        # self.play(FadeOut(show))
 
 
 class Example_Black_Hole(Scene):

@@ -1,10 +1,10 @@
 from manim import *
 from manim_string_cosmo import *
 
-import_string_cosmo_template("dark_depths")
+import_string_cosmo_template("blue_ice")
 
 
-class Example_Table_Summary_Bubble_and_Scales(Scene):
+class Example_Table_Summary_Bubble_Scales(Scene):
     def construct(self):
         gp = (
             VGroup(Table_Summary_Induce(), Table_Energy_Scales())
