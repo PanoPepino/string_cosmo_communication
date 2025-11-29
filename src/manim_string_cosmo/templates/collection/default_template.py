@@ -7,7 +7,7 @@ from ...objects import *
 default_template = {
     "bg_color": WHITE,  # White background
     "text_color": BLACK,  # Black text
-    "brane_color": RED,  # Classic red for branes
+    "brane_color": DARK_GREY,  # Classic red for branes
     "brane_text_color": WHITE,  # White text on branes
     "brane_fill_opa": 0.1,  # Light fill
     "brane_stroke_w": 0.2,  # Thin stroke

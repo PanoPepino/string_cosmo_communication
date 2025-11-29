@@ -5,7 +5,9 @@ __all__ = ["Table_Bh_Embedding"]
 
 
 class Table_Bh_Embedding(Table_General, Group):
-    """Class to represent a table of the coordinates of the embedding of the dark bubble. See Table_General Class. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).
+    """
+    Class to represent a table of the coordinates of the embedding of the dark bubble. 
+    See Table_General Class. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).
 
     - **Parameters**::
 
