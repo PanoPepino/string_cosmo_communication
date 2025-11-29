@@ -2,24 +2,25 @@ from ...my_imports import *
 from ...objects import *
 
 # QUANTUM DUSK TEMPLATE
-# Deep purples and blues representing quantum phenomena and twilight string landscapes
+# Dusky purple theme with warm accent colors
 
 quantum_dusk = {
-    "bg_color": "#E8E5F2",  # Light lavender background
-    "text_color": "#1A1033",  # Deep purple-black for text
-    "brane_color": "#6B4C9A",  # Royal purple for branes
-    "brane_text_color": "#F0EDF5",  # Light text on branes
-    "brane_fill_opa": 0.18,  # Moderate transparency
-    "brane_stroke_w": 2.2,  # Medium-bold stroke
-    "vacuum_color": "#2A1F5C",  # Deep space purple for vacuum
-    "vacuum_fill_opa": 0.15,  # Ethereal fill
-    "vacuum_stroke_w": 1.5,  # Medium stroke
-    "vacuum_text_color": "#1A1033",  # Dark text in vacuum
-    "corner_rad": 0.12,  # Slightly rounded corners
+    "bg_color": "#2D3748",  # Dark slate background
+    "brane_color": "#9F7AEA",  # Purple for branes
+    "brane_text_color": "#2D3748",  # Dark text on branes
+    "brane_fill_opa": 0.18,  # Light fill
+    "brane_stroke_w": 1.3,  # Medium stroke
+    "vacuum_color": "#FC8181",  # Coral pink vacuum
+    "vacuum_fill_opa": 0.18,  # Light fill
+    "vacuum_stroke_w": 1.3,  # Medium stroke
+    "vacuum_text_color": "#2D3748",  # Dark text in vacuum
+    "corner_rad": 0.09,  # Rounded corners
     "corner_rad_direction": [1, 1, 1, 1],  # All corners rounded
-    "arrow_color": "#8B72C2",  # Medium purple arrows
-    "bh_color": "#0A0415",  # Nearly black for black holes
-    "bh_fill_opa": 0.95,  # Very opaque
+    "arrow_color": "#9F7AEA",  # Purple arrows
+    "bh_color": "#F6AD55",  # Orange for black holes
+    "bh_fill_opa": 0.18,  # Light opacity
+    "string_color": "#68D391",  # Green for strings
+    "field_top_color": "#9F7AEA",  # Purple for field tops
 }
 
 # Apply background
@@ -52,6 +53,6 @@ Black_Hole.set_default(
 )
 
 Bubble.set_default(
-    string_color=quantum_dusk["arrow_color"],
-    field_top_color=quantum_dusk["brane_color"],
+    string_color=quantum_dusk["string_color"],
+    field_top_color=quantum_dusk["field_top_color"],
 )

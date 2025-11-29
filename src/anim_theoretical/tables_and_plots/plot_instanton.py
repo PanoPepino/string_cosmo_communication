@@ -5,29 +5,49 @@ __all__ = ["Plot_Instanton"]
 
 
 class Plot_Instanton(Plot_General, Group):
-    """This is a class to represent an instanton potential with a false and true minima. See Plot_General Class.
+    """
+    Create a visual representation of an instanton potential with false and true minima.
+
+    This class inherits from :class:`Plot_General` and produces a plot showing a double-well
+    potential landscape characteristic of instanton configurations in quantum field theory.
+    The plot includes labeled minima (V+ and V-) and an interactive field position indicator
+    that can be animated to demonstrate tunneling processes.
+
+    :param kwargs: Keyword arguments passed to :class:`Plot_General` for styling configuration.
 
     .. note::
 
-        Note that the axis and labels of these are the 0-th element of the group when you call it.
+       The axis and labels are stored as the 0-th element of the group when accessed.
+       
+       To scale the graph with respect to its center:
+       ``plot.scale(3, about_point=plot.ax_ins.c2p(0, 0, 0))``
 
-    - **Example**::
+    .. seealso::
 
-        from manim  import *
-        from beanim import *
+       - :class:`Plot_General` - Base class providing styling parameters
+       - :class:`Plot_Quantum` - Related quantum mechanical plot
 
-        class Example_Plot_Instanton(Scene):
+    **Example usage:**
+
+    .. code-block:: python
+
+        from manim import *
+        from anim_theoretical import *
+
+        class InstantonExample(Scene):
             def construct(self):
-                p_ins= Plot_Instanton().to_corner(DL)
+                # Create instanton plot in bottom-left corner
+                p_ins = Plot_Instanton().to_corner(DL)
+                
+                # Add the plot axes and potential
                 self.add(p_ins[0])
+                
+                # Animate field position appearing
                 self.play(p_ins.fade_in_field_position())
+                
+                # Demonstrate tunneling/decay process
                 self.play(p_ins.decay())
-
-    - **Methods**:
-
     """
-
-    # Scale any graph with respect to the center scale(3, about_point=graph.ax_ins.c2p(0, 0, 0)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -107,25 +127,56 @@ class Plot_Instanton(Plot_General, Group):
             self.add(self.initial_show, self.field_position)
 
     def fade_in_field_position(self, rt: float = 0.5, rf: float = linear) -> Animation:
-        """Args::
+        """
+        Animate the field position indicator fading into view.
 
-            - rt (float, optional): Defaults to 0.5.
-            - rf (float, optional): Defaults to linear.
+        This method creates a fade-in animation for the dot representing the current
+        field position in the potential landscape.
 
-        Returns::
+        :param rt: Animation runtime in seconds.
+        :type rt: float, default=0.5
 
-            Animation: Fades the field position in.
+        :param rf: Rate function controlling animation timing (e.g., ``linear``, ``smooth``).
+        :type rf: function, default=linear
+
+        :returns: Animation showing the field position indicator fading in.
+        :rtype: Animation
+
+        **Example:**
+
+        .. code-block:: python
+
+            plot = Plot_Instanton()
+            self.play(plot.fade_in_field_position(rt=1.0, rf=smooth))
         """
         return FadeIn(self.field_position, run_time=rt, rate_func=rf)
 
     def decay(self, rt: float = 0.5, rf: float = linear) -> Animation:
-        """Args::
+        """
+        Animate the tunneling/decay process from false vacuum to true vacuum.
 
-            - rt (float, optional): Defaults to 0.5.
-            - rf (float, optional): Defaults to linear.
+        This method creates an animation showing the field position transitioning
+        from the false vacuum (V+) to the true vacuum (V-), representing quantum
+        tunneling through the potential barrier.
 
-        Returns::
+        :param rt: Animation runtime in seconds.
+        :type rt: float, default=0.5
 
-            Animation: Describes the tunneling process in the potential.
+        :param rf: Rate function controlling animation timing.
+        :type rf: function, default=linear
+
+        :returns: Animation describing the tunneling process in the potential.
+        :rtype: Animation
+
+        **Example:**
+
+        .. code-block:: python
+
+            plot = Plot_Instanton()
+            # Quick decay animation
+            self.play(plot.decay(rt=0.3, rf=rush_into))
+            
+            # Smooth, slower decay
+            self.play(plot.decay(rt=2.0, rf=smooth))
         """
         return self.tracker_ins.animate(run_time=rt, rate_func=rf).set_value(0.7)

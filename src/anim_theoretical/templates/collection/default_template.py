@@ -6,7 +6,6 @@ from ...objects import *
 
 default_template = {
     "bg_color": WHITE,  # White background
-    "text_color": BLACK,  # Black text
     "brane_color": RED,  # Classic red for branes
     "brane_text_color": WHITE,  # White text on branes
     "brane_fill_opa": 0.1,  # Light fill
@@ -20,6 +19,8 @@ default_template = {
     "arrow_color": WHITE,  # White arrows
     "bh_color": BLACK,  # Black for black holes
     "bh_fill_opa": 0.8,  # Standard opacity
+    "string_color": BLUE,  # Blue for strings
+    "field_top_color": BLUE,  # Blue for field tops
 }
 
 # Apply background
@@ -52,6 +53,6 @@ Black_Hole.set_default(
 )
 
 Bubble.set_default(
-    string_color=BLUE,
-    field_top_color=BLUE,
+    string_color=default_template["string_color"],
+    field_top_color=default_template["field_top_color"],
 )

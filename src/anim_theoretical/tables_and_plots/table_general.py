@@ -4,35 +4,72 @@ __all__ = ["Table_General"]
 
 
 class Table_General(VMobject):
-    """Class to load all necessary common inputs for any table in this library through inheritance propertiy.
+    """
+    Base class for all table objects providing common formatting and styling parameters.
 
-    - **Parameters**::
+    This class centralizes common input parameters for table creation in the string cosmology
+    library, ensuring consistent styling across different table types through inheritance.
+    It handles text colors, highlighting options, decorators, and corner styling.
 
-        - text_color (ParsableManimColor, optional): Defaults to WHITE.
-        - hlight_1_color (ParsableManimColor, optional): Highlight color
-        for some of the cells. Defaults to GREEN.
-        - hlight_2_color (ParsableManimColor, optional): Defaults to RED.
-        - hlight_3_color (ParsableManimColor, optional): Defaults to BLUE.
-        - corner_rad (float, optional): Defaults to 0.
-        - corner_rad_direction (list, optional). To modify which vertex bend and not.
-        Defaults to [0, 0, 0, 0].
-        - decorator_color (ParsableManimColor, optional): Defaults to WHITE.
-        - decorator_stroke_w (float, optiona): Defaults to 1.
-        - stroke_w (float, optional): Defaults to 1.
-        - stroke_opa (float, optional): Defaults to 1,
-        - fill_opa (float, optional): Defaults to 0.3.
+    :param text_color: Primary color for table text content.
+    :type text_color: ParsableManimColor, default=WHITE
 
-    - **Example**::
+    :param hlight_1_color: Primary highlight color for emphasizing specific cells.
+    :type hlight_1_color: ParsableManimColor, default=GREEN
 
-        from ..my_imports import *
-        from manim theoretical import *
+    :param hlight_2_color: Secondary highlight color for cell emphasis.
+    :type hlight_2_color: ParsableManimColor, default=RED
 
-        class Example_Table_Summary_Bubble_and_Scales(Scene):
+    :param hlight_3_color: Tertiary highlight color for cell emphasis.
+    :type hlight_3_color: ParsableManimColor, default=BLUE
+
+    :param decorator_color: Color of the table border/frame decorator.
+    :type decorator_color: ParsableManimColor, default=WHITE
+
+    :param decorator_stroke_w: Stroke width of the decorator frame.
+    :type decorator_stroke_w: float, default=1
+
+    :param corner_rad: Base radius for rounded corners on table cells and decorators.
+    :type corner_rad: float, default=0
+
+    :param corner_rad_direction: List specifying which corners to round [UL, UR, DR, DL].
+        Each element is multiplied by `corner_rad` to determine final corner radius.
+    :type corner_rad_direction: list, default=[0, 0, 0, 0]
+
+    :param stroke_w: General stroke width for table lines.
+    :type stroke_w: float, default=1
+
+    :param stroke_opa: Stroke opacity for table borders and dividers.
+    :type stroke_opa: float, default=1
+
+    :param fill_opa: Fill opacity for highlighted cells and backgrounds.
+    :type fill_opa: float, default=0.3
+
+    :param kwargs: Additional keyword arguments passed to :class:`VMobject`.
+
+    .. seealso::
+
+       - :class:`Table_Energy_Scales`
+       - :class:`Table_Summary`
+       - :class:`Table_BH_Embedding`
+
+    **Example usage:**
+
+    .. code-block:: python
+
+        from manim import *
+        from anim_theoretical import *
+
+        class TableExample(Scene):
             def construct(self):
-                gp= VGroup(Table_Summary_Induce(), Table_Energy_Scales()).arrange(RIGHT)
-                gp.scale_to_fit_width(config.frame_width-1)
-                self.add(gp)
-
+                # Create tables and arrange them
+                table_group = VGroup(
+                    Table_Summary_Induce(),
+                    Table_Energy_Scales()
+                ).arrange(RIGHT)
+                
+                table_group.scale_to_fit_width(config.frame_width - 1)
+                self.add(table_group)
     """
 
     def __init__(

@@ -2,24 +2,25 @@ from ...my_imports import *
 from ...objects import *
 
 # COSMIC DAWN TEMPLATE
-# Warm sunrise colors representing the dawn of the universe and early cosmological eras
+# Vibrant energy-themed palette with dark cosmic background
 
 cosmic_dawn = {
-    "bg_color": "#FFF5E6",  # Soft cream background like early morning light
-    "text_color": "#2C1810",  # Deep brown for text
-    "brane_color": "#FF6B35",  # Warm orange-red for branes
-    "brane_text_color": "#2C1810",  # Dark text on branes
-    "brane_fill_opa": 0.15,  # Light transparency
-    "brane_stroke_w": 2.5,  # Bold stroke for visibility
-    "vacuum_color": "#7C3238",  # Deep red for vacuum
-    "vacuum_fill_opa": 0.12,  # Subtle fill
-    "vacuum_stroke_w": 1.2,  # Medium stroke
-    "vacuum_text_color": "#2C1810",  # Dark text in vacuum
-    "corner_rad": 0.15,  # Rounded corners
+    "bg_color": "#1A1A2E",  # Deep cosmic background
+    "brane_color": "#FF6B6B",  # Bright coral for branes
+    "brane_text_color": "#1A1A2E",  # Dark text on branes
+    "brane_fill_opa": 0.15,  # Light fill
+    "brane_stroke_w": 1.5,  # Medium-thick stroke
+    "vacuum_color": "#FFD93D",  # Golden yellow vacuum
+    "vacuum_fill_opa": 0.15,  # Light fill
+    "vacuum_stroke_w": 1.5,  # Medium-thick stroke
+    "vacuum_text_color": "#1A1A2E",  # Dark text in vacuum
+    "corner_rad": 0.08,  # Rounded corners
     "corner_rad_direction": [1, 1, 1, 1],  # All corners rounded
-    "arrow_color": "#FF6B35",  # Orange arrows
-    "bh_color": "#1A0B0B",  # Very dark for black holes
-    "bh_fill_opa": 0.9,  # Nearly opaque
+    "arrow_color": "#FF6B6B",  # Coral arrows
+    "bh_color": "#6BCB77",  # Bright green for black holes
+    "bh_fill_opa": 0.15,  # Light opacity
+    "string_color": "#4D96FF",  # Bright blue for strings
+    "field_top_color": "#FF6B6B",  # Coral for field tops
 }
 
 # Apply background
@@ -52,6 +53,6 @@ Black_Hole.set_default(
 )
 
 Bubble.set_default(
-    string_color=cosmic_dawn["brane_color"],
-    field_top_color=cosmic_dawn["arrow_color"],
+    string_color=cosmic_dawn["string_color"],
+    field_top_color=cosmic_dawn["field_top_color"],
 )
