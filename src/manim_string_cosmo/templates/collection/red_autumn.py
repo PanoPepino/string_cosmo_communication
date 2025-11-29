@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # RED AUTUMN TEMPLATE
 # Warm autumn palette with rich red and orange tones
@@ -23,7 +23,7 @@ red_autumn = {
     "bh_fill_opa": 0.9,  # High opacity
     "string_color": "#C0392B",  # Deep red for strings
     "field_top_color": "#C0392B",  # Deep red for field tops
-    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
+    "tex_temp": TexFontTemplates.helvetica_fourier_it,  # Font for Tex and MathTex
 }
 
 # Apply background
@@ -83,8 +83,8 @@ Plot_General.set_default(
     func_2_color=red_autumn["vacuum_color"],
     func_3_color=red_autumn["bh_color"],
     text_color=red_autumn["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=red_autumn["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*red_autumn["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=red_autumn["arrow_color"],
     decorator_stroke_w=red_autumn["brane_stroke_w"],

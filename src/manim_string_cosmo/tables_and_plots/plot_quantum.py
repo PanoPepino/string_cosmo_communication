@@ -38,18 +38,18 @@ class Plot_Quantum(Plot_General, VGroup):
                 tips=False,
                 background_line_style={"stroke_opacity": 0},
             )
-            .set_color(self.text_color)
+            .set_color(self.func_main_color)
             .set(stroke_opacity=self.axis_opacity)
         )
         region_point = self.ax_q_cosmo.coords_to_point(4, 4)
         split_regions = self.ax_q_cosmo.get_vertical_line(region_point).set_color(
-            self.text_color
+            self.func_main_color
         )
         self.lab_ax_q_cosmo = self.ax_q_cosmo.get_axis_labels(
-            x_label=MathTex("a", color=self.text_color, font_size=25),
-            y_label=MathTex("V(a)", color=self.text_color, font_size=25),
+            x_label=MathTex("a", color=self.func_main_color, font_size=25),
+            y_label=MathTex("V(a)", color=self.func_main_color, font_size=25),
         )
-        regions = MathTex("I", "II", color=self.text_color, font_size=30)
+        regions = MathTex("I", "II", color=self.func_main_color, font_size=30)
         regions[0].next_to(split_regions, LEFT, buff=1)
         regions[1].next_to(split_regions, RIGHT, buff=1)
 

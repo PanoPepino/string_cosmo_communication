@@ -30,7 +30,6 @@ class Plot_Induced_Potential(Plot_General, Group):
                 self.play(FadeOut(plot_pot))
                 self.play(Wait())
 
-    - **Methods**::
 
     """
 
@@ -51,7 +50,7 @@ class Plot_Induced_Potential(Plot_General, Group):
             y_length=6,
             tips=False,
             background_line_style={"stroke_opacity": 0},
-        ).set_color(self.text_color)
+        ).set_color(self.func_main_color)
         self.lab_ax_4D_cosmos = self.ax_4D_cosmos.get_axis_labels(
             x_label=MathTex("a", font_size=40, color=self.func_main_color),
             y_label=MathTex("V(a)", font_size=40, color=self.func_main_color),

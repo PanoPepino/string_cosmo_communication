@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # DEFAULT TEMPLATE
 # Classic black and white theme with high contrast
@@ -23,7 +23,7 @@ default_template = {
     "bh_fill_opa": 0.2,  # Light opacity
     "string_color": "#FFFFFF",  # White for strings
     "field_top_color": "#FFFFFF",  # White for field tops
-    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
+    "tex_temp": TexFontTemplates.latin_modern_tw,  # Font for Tex and MathTex
 }
 
 # Apply background
@@ -83,8 +83,8 @@ Plot_General.set_default(
     func_2_color=default_template["vacuum_color"],
     func_3_color=default_template["bh_color"],
     text_color=default_template["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=default_template["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*default_template["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=default_template["arrow_color"],
     decorator_stroke_w=default_template["brane_stroke_w"],

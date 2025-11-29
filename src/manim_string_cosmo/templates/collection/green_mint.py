@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # GREEN MINT TEMPLATE
 # Fresh minty green palette with light background
@@ -23,7 +23,7 @@ green_mint = {
     "bh_fill_opa": 0.9,  # High opacity
     "string_color": "#22543D",  # Deep green for strings
     "field_top_color": "#22543D",  # Deep green for field tops
-    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
+    "tex_temp": TexFontTemplates.droid_sans,  # Font for Tex and MathTex
 }
 
 # Apply background
@@ -83,8 +83,8 @@ Plot_General.set_default(
     func_2_color=green_mint["vacuum_color"],
     func_3_color=green_mint["bh_color"],
     text_color=green_mint["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=green_mint["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*green_mint["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=green_mint["arrow_color"],
     decorator_stroke_w=green_mint["brane_stroke_w"],

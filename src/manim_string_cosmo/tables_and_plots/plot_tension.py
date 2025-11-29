@@ -38,13 +38,13 @@ class Plot_Lambda_Tension(Plot_General, VGroup):
                 tips=False,
                 background_line_style={"stroke_opacity": 0},
             )
-            .set_color(self.text_color)
+            .set_color(self.func_main_color)
             .set(stroke_opacity=self.stroke_opa)
         )
 
         self.lab_ax_tension_DB = self.ax_tension_DB.get_axis_labels(
-            x_label=MathTex("\\sigma", font_size=40, color=self.text_color),
-            y_label=MathTex("\\Lambda_{4}", font_size=40, color=self.text_color),
+            x_label=MathTex("\\sigma", font_size=40, color=self.func_main_color),
+            y_label=MathTex("\\Lambda_{4}", font_size=40, color=self.func_main_color),
         )
         self.lab_ax_tension_DB[1].shift(0.2 * DOWN)
         kp = 3

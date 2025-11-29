@@ -208,6 +208,7 @@ If you find this project helpful, consider supporting its development. Thank you
 Change Log:
 
 2025/11/29: - Templates and color palettes updated.
+            - Colors adjusted.
             - Docstrings corrected.
             - 
 
@@ -216,7 +217,8 @@ Change Log:
 TO DO LIST:
 
 
-- To rewrite all templates so that Tex and MathTex have same font as in beanim (Tex, MathTex default)
+- Fix webpage documentation.
 - Fix issue with gravitational waves in some colors.
+- Adjust opacities and widths of strokes.
 
 >

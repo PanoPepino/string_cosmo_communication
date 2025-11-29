@@ -59,7 +59,7 @@ class Plot_Instanton(Plot_General, Group):
                 tips=False,
                 background_line_style={"stroke_opacity": 0},
             )
-            .set_color(self.text_color)
+            .set_color(self.func_main_color)
             .set(stroke_opacity=self.axis_opacity)
         )
         lab_ax_ins = self.ax_ins.get_axis_labels(

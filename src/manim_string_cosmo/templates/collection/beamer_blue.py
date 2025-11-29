@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # BEAMER BLUE TEMPLATE
 # Professional blue theme inspired by classic Beamer presentations
@@ -69,8 +69,8 @@ Plot_General.set_default(
     func_2_color=beamer_blue["vacuum_color"],
     func_3_color=beamer_blue["bh_color"],
     text_color=beamer_blue["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=beamer_blue["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*beamer_blue["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=beamer_blue["arrow_color"],
     decorator_stroke_w=beamer_blue["brane_stroke_w"],

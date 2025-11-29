@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # BEAMER GREEN TEMPLATE
 # Professional green theme inspired by classic Beamer presentations
@@ -83,8 +83,8 @@ Plot_General.set_default(
     func_2_color=beamer_green["vacuum_color"],
     func_3_color=beamer_green["bh_color"],
     text_color=beamer_green["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=beamer_green["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*beamer_green["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=beamer_green["arrow_color"],
     decorator_stroke_w=beamer_green["brane_stroke_w"],

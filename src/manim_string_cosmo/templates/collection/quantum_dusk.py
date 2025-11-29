@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # QUANTUM DUSK TEMPLATE
 # Dusky purple theme with warm accent colors
@@ -23,7 +23,7 @@ quantum_dusk = {
     "bh_fill_opa": 0.9,  # High opacity
     "string_color": "#D4A5A5",  # Dusty rose for strings
     "field_top_color": "#D4A5A5",  # Dusty rose for field tops
-    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
+    "tex_temp": TexFontTemplates.biolinum,  # Font for Tex and MathTex
 }
 
 # Apply background
@@ -83,8 +83,8 @@ Plot_General.set_default(
     func_2_color=quantum_dusk["vacuum_color"],
     func_3_color=quantum_dusk["bh_color"],
     text_color=quantum_dusk["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=quantum_dusk["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*quantum_dusk["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=quantum_dusk["arrow_color"],
     decorator_stroke_w=quantum_dusk["brane_stroke_w"],

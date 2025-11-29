@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # COSMIC DAWN TEMPLATE
 # Vibrant energy-themed palette with dark cosmic background
@@ -83,8 +83,8 @@ Plot_General.set_default(
     func_2_color=cosmic_dawn["vacuum_color"],
     func_3_color=cosmic_dawn["bh_color"],
     text_color=cosmic_dawn["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=cosmic_dawn["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*cosmic_dawn["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=cosmic_dawn["arrow_color"],
     decorator_stroke_w=cosmic_dawn["brane_stroke_w"],

@@ -1,7 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
-from manim_slides.templates import TexFontTemplates
+
 
 # BLUE ICE TEMPLATE
 # Cool cyan-blue palette with icy tones
@@ -23,7 +23,7 @@ blue_ice = {
     "bh_fill_opa": 0.9,  # Very strong opacity
     "string_color": "#003E7C",  # Bright cyan for strings
     "field_top_color": "#003E7C",  # Deep blue for field tops
-    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
+    "tex_temp": TexFontTemplates.biolinum,  # Font for Tex and MathTex
 }
 
 # Apply background
@@ -83,8 +83,8 @@ Plot_General.set_default(
     func_2_color=blue_ice["vacuum_color"],
     func_3_color=blue_ice["bh_color"],
     text_color=blue_ice["brane_text_color"],
-    axis_opacity=0.5,
-    axis_stroke=blue_ice["brane_stroke_w"],
+    axis_opacity=0.6,
+    axis_stroke=2*blue_ice["brane_stroke_w"],
     decorator_presence="box",
     decorator_color=blue_ice["arrow_color"],
     decorator_stroke_w=blue_ice["brane_stroke_w"],
