@@ -2,24 +2,25 @@ from ...my_imports import *
 from ...objects import *
 
 # DARK ENERGY TEMPLATE
-# Dark backgrounds with vibrant energy-themed accents for modern cosmology presentations
+# Dark space theme with vibrant cyan energy accents
 
 dark_energy = {
     "bg_color": "#0D1B2A",  # Deep space blue-black background
-    "text_color": "#E0E1DD",  # Light gray for text
-    "brane_color": "#00D9FF",  # Bright cyan for branes (energy signature)
-    "brane_text_color": "#0D1B2A",  # Dark text on bright branes
-    "brane_fill_opa": 0.2,  # Glowing effect
-    "brane_stroke_w": 2.8,  # Bold stroke for visibility on dark background
-    "vacuum_color": "#1B263B",  # Slightly lighter space blue for vacuum
-    "vacuum_fill_opa": 0.25,  # More visible on dark background
-    "vacuum_stroke_w": 1.8,  # Thicker stroke for visibility
-    "vacuum_text_color": "#E0E1DD",  # Light text in vacuum
-    "corner_rad": 0.18,  # More rounded for modern look
+    "brane_color": "#00D9FF",  # Bright cyan for branes
+    "brane_text_color": "#0D1B2A",  # Dark text on branes
+    "brane_fill_opa": 0.05,  # Light fill
+    "brane_stroke_w": 1,  # Medium stroke
+    "vacuum_color": "#00FFC6",  # Bright teal vacuum
+    "vacuum_fill_opa": 0.05,  # Light fill
+    "vacuum_stroke_w": 1,  # Medium stroke
+    "vacuum_text_color": "#E0E1DD",  # Light gray text in vacuum
+    "corner_rad": 0.05,  # Slightly rounded corners
     "corner_rad_direction": [1, 1, 1, 1],  # All corners rounded
-    "arrow_color": "#00FFC6",  # Bright teal arrows
-    "bh_color": "#000000",  # Pure black for black holes
-    "bh_fill_opa": 1.0,  # Completely opaque
+    "arrow_color": "#00D9FF",  # Bright cyan arrows
+    "bh_color": "#1B263B",  # Space blue for black holes
+    "bh_fill_opa": 0.05,  # Light opacity
+    "string_color": "#E0E1DD",  # Light gray for strings
+    "field_top_color": "#00D9FF",  # Bright cyan for field tops
 }
 
 # Apply background
@@ -52,6 +53,6 @@ Black_Hole.set_default(
 )
 
 Bubble.set_default(
-    string_color=dark_energy["arrow_color"],
-    field_top_color=dark_energy["brane_color"],
+    string_color=dark_energy["string_color"],
+    field_top_color=dark_energy["field_top_color"],
 )
