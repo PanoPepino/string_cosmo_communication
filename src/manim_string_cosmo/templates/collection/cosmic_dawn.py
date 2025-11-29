@@ -1,5 +1,6 @@
 from ...my_imports import *
 from ...objects import *
+from ...tables_and_plots import *
 
 # COSMIC DAWN TEMPLATE
 # Vibrant energy-themed palette with dark cosmic background
@@ -55,4 +56,36 @@ Black_Hole.set_default(
 Bubble.set_default(
     string_color=cosmic_dawn["string_color"],
     field_top_color=cosmic_dawn["field_top_color"],
+)
+
+Table_General.set_default(
+    text_color=cosmic_dawn["brane_color"],
+    hlight_1_color=cosmic_dawn["brane_color"],
+    hlight_2_color=cosmic_dawn["vacuum_color"],
+    hlight_3_color=cosmic_dawn["bh_color"],
+    decorator_color=cosmic_dawn["arrow_color"],
+    decorator_stroke_w=cosmic_dawn["brane_stroke_w"],
+    corner_rad=cosmic_dawn["corner_rad"],
+    corner_rad_direction=cosmic_dawn["corner_rad_direction"],
+    stroke_w=cosmic_dawn["brane_stroke_w"],
+    stroke_opa=1,
+    fill_opa=cosmic_dawn["brane_fill_opa"],
+)
+
+Plot_General.set_default(
+    func_main_color=cosmic_dawn["brane_color"],
+    func_2_color=cosmic_dawn["vacuum_color"],
+    func_3_color=cosmic_dawn["bh_color"],
+    text_color=cosmic_dawn["brane_text_color"],
+    axis_opacity=0.5,
+    axis_stroke=cosmic_dawn["brane_stroke_w"],
+    decorator_presence="box",
+    decorator_color=cosmic_dawn["arrow_color"],
+    decorator_stroke_w=cosmic_dawn["brane_stroke_w"],
+    corner_rad=cosmic_dawn["corner_rad"],
+    corner_rad_direction=cosmic_dawn["corner_rad_direction"],
+    fill_opa=cosmic_dawn["brane_fill_opa"],
+    stroke_w=cosmic_dawn["brane_stroke_w"],
+    stroke_opa=1,
+    tightness=0.3,
 )
