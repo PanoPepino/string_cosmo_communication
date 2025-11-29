@@ -3,27 +3,24 @@ from ...objects import *
 
 # BEAMER GREEN TEMPLATE
 # Professional green theme inspired by classic Beamer presentations
-# Clean white background with deep green accents for scientific presentations
 
 beamer_green = {
-    "bg_color": "#FFFFFF",  # Clean white background
-    "text_color": "#0B5B30",  # Deep green text
+    "bg_color": "#FFFFFF",  # White background
     "brane_color": "#096E30",  # Deep green for branes
-    "brane_color_2": "#09AC7B",  # Medium green accent
-    "brane_text_color": WHITE,  # White text on branes for contrast
-    "brane_fill_opa": 0.9,  # Strong opacity for visibility
-    "brane_stroke_w": 0.5,  # Thin stroke for clean look
-    "vacuum_color": "#0AD46C",  # Vibrant green for vacuum
-    "vacuum_fill_opa": 0.9,  # Strong fill
+    "brane_text_color": WHITE,  # White text on branes
+    "brane_fill_opa": 0.9,  # High fill opacity
+    "brane_stroke_w": 0.5,  # Thin stroke
+    "vacuum_color": "#09AC7B",  # Medium green vacuum
+    "vacuum_fill_opa": 0.9,  # High fill
     "vacuum_stroke_w": 0.5,  # Thin stroke
-    "vacuum_text_color": BLACK,  # Dark text for contrast
-    "corner_rad": 0.1,  # Slight rounding
+    "vacuum_text_color": WHITE,  # White text in vacuum
+    "corner_rad": 0.1,  # Rounded corners
     "corner_rad_direction": [1, 1, 1, 1],  # All corners rounded
     "arrow_color": "#096E30",  # Deep green arrows
-    "bh_color": "#042815",  # Very dark green for black holes
-    "bh_fill_opa": 0.9,  # Nearly opaque
-    "bubble_string_color": "#C6FF7C",  # Light yellow-green for strings
-    "bubble_field_color": "#09AC7B",  # Medium green for fields
+    "bh_color": "#0AD46C",  # Light green for black holes
+    "bh_fill_opa": 0.9,  # High opacity
+    "string_color": "#C6FF7C",  # Lightest green for strings
+    "field_top_color": "#096E30",  # Deep green for field tops
 }
 
 # Apply background
@@ -56,6 +53,6 @@ Black_Hole.set_default(
 )
 
 Bubble.set_default(
-    string_color=beamer_green["bubble_string_color"],
-    field_top_color=beamer_green["bubble_field_color"],
+    string_color=beamer_green["string_color"],
+    field_top_color=beamer_green["field_top_color"],
 )
