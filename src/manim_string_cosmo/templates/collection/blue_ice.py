@@ -1,6 +1,7 @@
 from ...my_imports import *
 from ...objects import *
 from ...tables_and_plots import *
+from manim_slides.templates import TexFontTemplates
 
 # BLUE ICE TEMPLATE
 # Cool cyan-blue palette with icy tones
@@ -22,10 +23,15 @@ blue_ice = {
     "bh_fill_opa": 0.9,  # Very strong opacity
     "string_color": "#003E7C",  # Bright cyan for strings
     "field_top_color": "#003E7C",  # Deep blue for field tops
+    "tex_temp": TexFontTemplates.droid_serif,  # Font for Tex and MathTex
 }
 
 # Apply background
 config.background_color = blue_ice["bg_color"]
+
+# Set TeX font defaults
+Tex.set_default(tex_template=blue_ice['tex_temp'])
+MathTex.set_default(tex_template=blue_ice['tex_temp'])
 
 # Set defaults for string cosmology classes
 Brane_General.set_default(
