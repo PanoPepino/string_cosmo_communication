@@ -3,27 +3,24 @@ from ...objects import *
 
 # BEAMER BLUE TEMPLATE
 # Professional blue theme inspired by classic Beamer presentations
-# Clean white background with deep blue accents for scientific presentations
 
 beamer_blue = {
-    "bg_color": "#FFFFFF",  # Clean white background
-    "text_color": BLACK,  # Black text for clarity
+    "bg_color": "#FFFFFF",  # White background
     "brane_color": "#003E7C",  # Deep blue for branes
-    "brane_color_2": "#297ACB",  # Medium blue accent
-    "brane_text_color": WHITE,  # White text on branes for contrast
-    "brane_fill_opa": 0.9,  # Strong opacity for visibility
-    "brane_stroke_w": 0.5,  # Thin stroke for clean look
-    "vacuum_color": "#A0CBFC",  # Light blue for vacuum
-    "vacuum_fill_opa": 0.9,  # Strong fill
+    "brane_text_color": WHITE,  # White text on branes
+    "brane_fill_opa": 0.9,  # High fill opacity
+    "brane_stroke_w": 0.5,  # Thin stroke
+    "vacuum_color": "#297ACB",  # Medium blue vacuum
+    "vacuum_fill_opa": 0.9,  # High fill
     "vacuum_stroke_w": 0.5,  # Thin stroke
-    "vacuum_text_color": BLACK,  # Dark text in light vacuum
-    "corner_rad": 0.1,  # Slight rounding
+    "vacuum_text_color": WHITE,  # White text in vacuum
+    "corner_rad": 0.1,  # Rounded corners
     "corner_rad_direction": [1, 1, 1, 1],  # All corners rounded
     "arrow_color": "#003E7C",  # Deep blue arrows
-    "bh_color": "#001A33",  # Very dark blue for black holes
-    "bh_fill_opa": 0.9,  # Nearly opaque
-    "bubble_string_color": "#97DDF9",  # Light cyan for strings
-    "bubble_field_color": "#297ACB",  # Medium blue for fields
+    "bh_color": "#A0CBFC",  # Light blue for black holes
+    "bh_fill_opa": 0.9,  # High opacity
+    "string_color": "#97DDF9",  # Lightest blue for strings
+    "field_top_color": "#003E7C",  # Deep blue for field tops
 }
 
 # Apply background
@@ -56,6 +53,6 @@ Black_Hole.set_default(
 )
 
 Bubble.set_default(
-    string_color=beamer_blue["bubble_string_color"],
-    field_top_color=beamer_blue["bubble_field_color"],
+    string_color=beamer_blue["string_color"],
+    field_top_color=beamer_blue["field_top_color"],
 )
