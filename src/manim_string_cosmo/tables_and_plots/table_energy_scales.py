@@ -5,7 +5,9 @@ __all__ = ["Table_Energy_Scales"]
 
 
 class Table_Energy_Scales(Table_General, VMobject):
-    """Class to display the table of energy scales of the dark bubble embedding. See Table_General Class."""
+    """
+    Class to display the table of energy scales of the dark bubble embedding. See Table_General Class.
+    """
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

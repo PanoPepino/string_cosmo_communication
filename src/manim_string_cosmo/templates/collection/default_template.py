@@ -7,22 +7,22 @@ from ...tables_and_plots import *
 # Classic black and white theme with high contrast
 
 default_template = {
-    "bg_color": "#000000",  # Black background
-    "brane_color": "#FFFFFF",  # White for branes
-    "brane_text_color": "#000000",  # Black text on branes
+    "bg_color": "#FFFFFF",  # Black background
+    "brane_color": "#000000",  # White for branes
+    "brane_text_color": "#FFFFFF",  # Black text on branes
     "brane_fill_opa": 0.2,  # Light fill
     "brane_stroke_w": 1,  # Standard stroke
     "vacuum_color": "#888888",  # Gray vacuum
     "vacuum_fill_opa": 0.2,  # Light fill
     "vacuum_stroke_w": 1,  # Standard stroke
-    "vacuum_text_color": "#FFFFFF",  # White text in vacuum
+    "vacuum_text_color": "#000000",  # White text in vacuum
     "corner_rad": 0,  # Sharp corners
     "corner_rad_direction": [0, 0, 0, 0],  # No rounding
-    "arrow_color": "#FFFFFF",  # White arrows
-    "bh_color": "#CCCCCC",  # Light gray for black holes
+    "arrow_color": "#000000",  # White arrows
+    "bh_color": "#3F3D3D",  # Light gray for black holes
     "bh_fill_opa": 0.2,  # Light opacity
-    "string_color": "#FFFFFF",  # White for strings
-    "field_top_color": "#FFFFFF",  # White for field tops
+    "string_color": "#000000",  # White for strings
+    "field_top_color": "#000000",  # White for field tops
     "tex_temp": TexFontTemplates.latin_modern_tw,  # Font for Tex and MathTex
 }
 

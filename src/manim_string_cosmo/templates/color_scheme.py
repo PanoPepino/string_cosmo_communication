@@ -2,10 +2,10 @@ import importlib
 
 from ..my_imports import *
 
-__all__ = ["import_string_cosmo_template"]
+__all__ = ["import_template_string_cosmo"]
 
 
-def import_string_cosmo_template(module_name: str):
+def import_template_string_cosmo(module_name: str):
     """
     Import a chosen template to standardize styling for string cosmology visualizations.
 
@@ -40,7 +40,7 @@ def import_string_cosmo_template(module_name: str):
 
         from manim_string_cosmo import *
 
-        import_string_cosmo_template('cosmic_dawn')
+        import_template_string_cosmo('cosmic_dawn')
 
         class MyScene(Scene):
             def construct(self):

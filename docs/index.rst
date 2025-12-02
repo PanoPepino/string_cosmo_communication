@@ -1,7 +1,8 @@
 String Cosmo Documentation
-=====================
+==========================
 
-You can find the repository in  `Github <https://github.com/PanoPepino/string_cosmo_communication>`_.
+Welcome to the documentation of String Cosmo. This library include several animations crafted over the years for string cosmology presentations (with big focus on braneworld cosmology).
+Perhaps you can find some inspiration to create your own animations related to your theoretical physics research? Do not hesitate on branching the `Github <https://github.com/PanoPepino/string_cosmo_communication>`_ repository and let us enhance together this library!!
 
 .. note::
 
@@ -11,7 +12,7 @@ You can find the repository in  `Github <https://github.com/PanoPepino/string_co
 Example Presentation
 --------------------
 
-This is an example of a presentation crafted with Manim + Manim-Slides + Beanim + String_Cosmo (Focus on the scientific sketches):
+This is an (old) example of a presentation crafted with Manim + Manim-Slides + Beanim + String_Cosmo (Focus on the scientific sketches):
  
 .. raw:: html
 
@@ -24,7 +25,7 @@ This is an example of a presentation crafted with Manim + Manim-Slides + Beanim 
             height="100%"
             allowfullscreen
             allow="autoplay"
-            src="https://panopepino.github.io/web_page/main_page/presentations/2024_06_madrid/susy_24.html">
+            src="https://panopepino.github.io/web_page/main_page/presentations/2024_05_hard/definitive.html">
         </iframe>
     </div>
 

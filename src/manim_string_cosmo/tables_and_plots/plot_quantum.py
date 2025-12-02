@@ -1,29 +1,33 @@
 from ..my_imports import *
+
 from .plot_general import *
+
 
 __all__ = ["Plot_Quantum"]
 
 
 class Plot_Quantum(Plot_General, VGroup):
-    """This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework. See Plot_General Class.
+    """
+    This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework.
 
-     .. note::
+    See Plot_General Class for more information.
 
-         The axis and potential are the 0-th element of the class.
+    .. note::
 
-     - **Example**::
+        The axis and potential are the 0-th element of the class.
 
-         from manim  import *
-         from manim_string_cosmo import *
+    **Example usage:**
 
-         class Example_Plot_Q(Scene):
-             def construct(self):
-                 gq= Plot_Quantum().scale(0.4).to_corner(DL)
-                 self.add(gq[0])
-                 self.play(gq.create_wave_functions())
+    .. code-block:: python
 
+        from manim import *
+        from manim_string_cosmo import *
 
-    - **Methods**::
+        class Example_Plot_Q(Scene):
+            def construct(self):
+                gq = Plot_Quantum().scale(0.4).to_corner(DL)
+                self.add(gq[0])
+                self.play(gq.create_wave_functions())
 
     """
 
@@ -128,7 +132,6 @@ class Plot_Quantum(Plot_General, VGroup):
             self.to_show = VGroup(q_pot, box)
             self.add(self.to_show, self.to_draw)
 
-        # Observe that 0-th element are the axis and labels of these. Then 1st element is the group of elements to plot.
         else:
             self.to_draw = VGroup(
                 self.HHawking, self.HH_label, self.Vilenkin, self.Vilenkin_label
@@ -137,14 +140,18 @@ class Plot_Quantum(Plot_General, VGroup):
             self.add(self.to_show, self.to_draw)
 
     def create_wave_functions(self, rt: float = 2, rf: float = linear) -> Succession:
-        """Args::
+        """
+        Write both wavefunctions for the discussion and its legend.
 
-            - rt (float, optional): Defaults to 2.
-            - rf (float, optional): Defaults to linear.
+        :param rt: Run time of the animation.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function of the animation.
+        :type rf: float
 
-            Succession: Write both wavefunctions for the discussion and its legend.
+        :return: Animation sequence writing all wavefunction elements.
+        :rtype: Succession
+
         """
         return Succession(
             *[Write(piece, run_time=rt, rate_func=rf) for piece in self.to_draw]

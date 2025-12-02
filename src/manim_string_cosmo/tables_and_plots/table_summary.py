@@ -5,7 +5,9 @@ __all__ = ["Table_Summary_Induce"]
 
 
 class Table_Summary_Induce(Table_General, VGroup):
-    """Class to display a table with all relations between 4D and higher dimension fields and the papers where they are discussed. See Table_General Class."""
+    """
+    Class to display a table with all relations between 4D and higher dimension fields and the papers where they are discussed. See Table_General Class.
+    """
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

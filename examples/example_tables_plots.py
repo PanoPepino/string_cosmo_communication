@@ -1,7 +1,7 @@
 from manim import *
 from manim_string_cosmo import *
 
-import_string_cosmo_template("blue_ice")
+import_template_string_cosmo("blue_ice")
 
 
 class Example_Table_Summary_Bubble_Scales(Scene):

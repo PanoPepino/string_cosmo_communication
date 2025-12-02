@@ -2,7 +2,7 @@
 
 # String Cosmology Communication
 
-**A Manim library for visualizing string theory and braneworld cosmology**
+**A Manim library for visualizing string and braneworld cosmology**
 
 <a href="https://www.buymeacoffee.com/panopepino" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="35" />
@@ -15,12 +15,16 @@
 
 ## 📚 About String Cosmology Communication
 
-This repository contains **String Cosmology Communication** (formerly mtheoretical), a Manim library designed for creating beautiful animations and visualizations of string theory and braneworld cosmology concepts.
+This repository contains **String Cosmology Communication** (formerly mtheoretical), a Manim library designed for creating animations and visualizations of string theory and braneworld cosmology concepts.
 
-The package provides scientifically accurate objects and templates to help researchers, educators, and enthusiasts communicate complex theoretical physics ideas through engaging animations.
+The package provides scientifically accurate objects and templates to help researchers communicate theoretical physics ideas through engaging animations.
+
+The main idea is to use this package together with [Beanim](https://panopepino.github.io/beanim/index.html) to create presentation slides for string cosmology research communication.
 
 > **📦 Package Name**  
 > The package is imported as **manim_string_cosmo** in your Python files.
+
+
 
 
 
@@ -41,14 +45,6 @@ The package provides scientifically accurate objects and templates to help resea
 - **Consistent Styling**: All objects automatically adapt to template
 - **Light & Dark Themes**: Choose backgrounds that work for your presentation
 
-Available templates:
-- `cosmic_dawn` - Warm sunrise colors for early universe
-- `quantum_dusk` - Deep purples for quantum effects
-- `dark_energy` - Dark cosmic themes
-- `green_mint`, `blue_ice`, `red_autumn` - Classic color palettes
-- `beamer_blue`, `beamer_green` - Professional presentation themes
-- `default_template` - Black and white fallback
-
 
 
 ## Examples
@@ -60,38 +56,57 @@ from manim import *
 from manim_string_cosmo import *
 
 # Import a template for consistent styling
-import_string_cosmo_template('cosmic_dawn')
+import_template_string_cosmo('dark_energy')
 
 class StringCosmologyScene(Scene):
     def construct(self):
-        # Create a bubble universe
-        bubble = Bubble(bubble_type="empty")
-        
-        # Create a brane
-        brane = Brane_General()
-        
-        # Animate
-        self.play(Create(bubble))
-        self.play(FadeIn(brane))
-        self.wait()
+        # Create a Dark Bubble with Electromagnetism on top
+        bubble = Bubble(bubble_type="em")
+
+        # Animate it!
+        self.play(bubble.fade_in_bulk())
+        self.play(bubble.nucleate_bubble())
+        self.wait(bubble.expand_bubble())
 ```
+
+## Template System
+
+Quickly change the entire look of your animations:
+
+```python
+# At the beginning of your script
+import_template_string_cosmo('beamer_blue')  # Professional blue theme
+
+# All subsequent objects will use this template
+class MyScene(Scene):
+    def construct(self):
+        bubble = Bubble()      # Automatically styled
+        brane = Brane_General()  # Automatically styled
+        # ...
+```
+
+See below for detailed information on all available templates.
+
+
+
 
 ### Template Comparison
 
 <div align="center">
-  <sub><i>Template comparison images will be added soon</i></sub>
+
+| Template | Title Slide | Generic Slide |
+|:--------:|:-----------:|:-------------:|
+| 🎨 **default_template** | <img src="docs/_static/media/images/Generic_Slide_1_default_template.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_default_template.png" width="200"/> |
+| 🌿 **green_mint** | <img src="docs/_static/media/images/Generic_Slide_1_green_mint.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_green_mint.png" width="200"/> |
+| 🧊 **blue_ice** | <img src="docs/_static/media/images/Generic_Slide_1_blue_ice.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_blue_ice.png" width="200"/> |
+| 🍂 **red_autumn** | <img src="docs/_static/media/images/Generic_Slide_1_red_autumn.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_red_autumn.png" width="200"/> |
+| 🔵 **beamer_blue** | <img src="docs/_static/media/images/Generic_Slide_1_beamer_blue.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_beamer_blue.png" width="200"/> |
+| 🟢 **beamer_green** | <img src="docs/_static/media/images/Generic_Slide_1_beamer_green.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_beamer_green.png" width="200"/> |
+| 🌌 **quantum_dusk** | <img src="docs/_static/media/images/Generic_Slide_1_quantum_dusk.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_quantum_dusk.png" width="200"/> |
+| ⚫ **dark_energy** | <img src="docs/_static/media/images/Generic_Slide_1_dark_energy.png" width="200"/> | <img src="docs/_static/media/images/Generic_Slide_2_dark_energy.png" width="200"/> |
+
 </div>
 
-### Advanced Examples
-
-Check out research talks and presentations using this library:
-
-- Bubble nucleation animations
-- Brane collision scenarios  
-- AdS/CFT visualizations
-- Black hole formation in braneworlds
-
-*More examples and video demonstrations coming soon!*
 
 
 
@@ -100,7 +115,7 @@ Check out research talks and presentations using this library:
 ### Prerequisites
 
 Make sure you have:
-- Python 3.8 or higher
+- Python 3.10 or higher
 - [Manim Community Edition](https://docs.manim.community/en/stable/installation.html)
 - Git
 
@@ -125,56 +140,11 @@ For detailed usage instructions and API reference, visit the [📚 documentation
 
 
 
-## Template System
-
-Quickly change the entire look of your animations:
-
-```python
-# At the beginning of your script
-import_string_cosmo_template('beamer_blue')  # Professional blue theme
-
-# All subsequent objects will use this template
-class MyScene(Scene):
-    def construct(self):
-        bubble = Bubble()      # Automatically styled
-        brane = Brane_General()  # Automatically styled
-        # ...
-```
-
-See the [Template Guide](https://panopepino.github.io/string_cosmo_communication/) for detailed information on all available templates.
-
-
-
-## Research Applications
-
-This library has been used to create visualizations for:
-
-- 🎯 Research presentations at conferences
-- 📝 Explanatory animations for papers
-- 🏛️ Outreach and educational content
-- 📺 YouTube videos on string cosmology
-
-If you use this library in your research or outreach, let us know!
-
-
-
-## Future Features
-
-Planned additions for upcoming versions:
-
-- 🎬 **Animation Presets**: Common cosmological scenarios ready to use
-- 📏 **More Objects**: Gravitons, moduli fields, flux compactifications
-- 📐 **Extended Templates**: More color schemes for different presentation contexts
-- 📦 **Example Gallery**: Comprehensive library of ready-to-use animations
-- 📚 **Tutorial Videos**: Step-by-step guides for common visualizations
-
-
-
 ## Contributing
 
 Contributions are welcome! Whether you:
 
-- Have ideas for new cosmological objects
+- Have ideas for new strin cosmo and related animations
 - Want to add color templates
 - Found bugs or have suggestions
 - Want to improve documentation
@@ -189,7 +159,7 @@ Special thanks to:
 
 - The [Manim Community](https://www.manim.community/) for creating such a powerful animation engine
 - Jérome Eertmans for the excellent [Manim-Slides](https://manim-slides.eertmans.be/) package
-- The string theory and cosmology research community for inspiration
+- The Swampland community for working hard to understand the true nature of quantum gravity
 
 
 
@@ -207,17 +177,25 @@ If you find this project helpful, consider supporting its development. Thank you
 <!--
 Change Log:
 
+2025/12/02: - Created images of all templates.
+            - Created example of objects of string cosmo and uploaded to webpage.
+            - Added guidelines to create previous slides.
+            - Modified README to display templates.
+
+
+2025/12/01: - Corrected some docstrings from some classes (Tables and Plots)
+            - Some web corrections.
+
 2025/11/29: - Templates and color palettes updated.
             - Colors adjusted.
             - Docstrings corrected.
-            - 
+      
 
 
 
 TO DO LIST:
 
-
-- Fix webpage documentation.
+- To move table_energy_scales and table_summary to beanim dictionaries.
 - Fix issue with gravitational waves in some colors.
 - Adjust opacities and widths of strokes.
 

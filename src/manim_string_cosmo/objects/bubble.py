@@ -363,6 +363,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
 
         :return: Animation showing bulk box and outside text appearance.
         :rtype: Animation or Succession
+
         """
         if self.bubble_type == "energy_discussion":
             return Succession(

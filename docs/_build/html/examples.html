@@ -251,113 +251,25 @@
         <article role="main" id="furo-main-content">
           <section id="quick-guide">
 <h1>Quick Guide<a class="headerlink" href="#quick-guide" title="Link to this heading">¶</a></h1>
-<p>This guide will walk you through ….. By the end, you’ll understand how to use templates, define slide objects, and create an animated presentation.</p>
+<p>This guide will walk you through the basics of <strong>String Cosmo Communication</strong>. Like <a class="reference external" href="https://github.com/PanoPepino/beanim">Beanim</a>, the package for creating Beamer-like slides, we’ll start with the available templates and colors, then build a presentation showcasing string theory and cosmology concepts.</p>
+<hr class="docutils" />
 <section id="available-templates">
 <h2>Available Templates<a class="headerlink" href="#available-templates" title="Link to this heading">¶</a></h2>
-<p>Beanim comes equipped with eight different templates to homogenise the look of your slides:</p>
+<p>String Cosmo comes equipped with nine different templates to homogenize the look of your slides:</p>
 <ul class="simple">
-<li><p>🎨 <strong>default_template</strong> - Clean and minimalist design</p></li>
+<li><p>🌅 <strong>cosmic_dawn</strong> - Warm sunrise colors for early universe scenarios</p></li>
+<li><p>🌌 <strong>quantum_dusk</strong> - Elegant purple-lavender theme for quantum effects</p></li>
+<li><p>⚫ <strong>dark_energy</strong> - Dark theme with bright cyan accents</p></li>
 <li><p>🌿 <strong>green_mint</strong> - Fresh mint green theme</p></li>
 <li><p>🧊 <strong>blue_ice</strong> - Cool blue color scheme</p></li>
 <li><p>🍂 <strong>red_autumn</strong> - Warm autumn colors</p></li>
 <li><p>🔵 <strong>beamer_blue</strong> - Classic Beamer style in blue</p></li>
 <li><p>🟢 <strong>beamer_green</strong> - Classic Beamer style in green</p></li>
-<li><p>🌌 <strong>quantum_dusk</strong> - Elegant purple-lavender theme</p></li>
-<li><p>⚫ <strong>dark_energy</strong> - Dark theme with bright cyan accents</p></li>
+<li><p>🎨 <strong>default_template</strong> - Clean black and white design</p></li>
 </ul>
 <section id="template-gallery">
 <h3>Template Gallery<a class="headerlink" href="#template-gallery" title="Link to this heading">¶</a></h3>
 <div style="margin: 20px 0;">
-
-  <!-- default_template -->
-  <div style="margin-bottom: 40px;">
-    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🎨 default_template</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_default_template.png" alt="default_template title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_default_template.png" alt="default_template generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-    </div>
-  </div>
-
-  <!-- green_mint -->
-  <div style="margin-bottom: 40px;">
-    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🌿 green_mint</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_green_mint.png" alt="green_mint title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_green_mint.png" alt="green_mint generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-    </div>
-  </div>
-
-  <!-- blue_ice -->
-  <div style="margin-bottom: 40px;">
-    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🧊 blue_ice</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_blue_ice.png" alt="blue_ice title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_blue_ice.png" alt="blue_ice generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-    </div>
-  </div>
-
-  <!-- red_autumn -->
-  <div style="margin-bottom: 40px;">
-    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🍂 red_autumn</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_red_autumn.png" alt="red_autumn title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_red_autumn.png" alt="red_autumn generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-    </div>
-  </div>
-
-  <!-- beamer_blue -->
-  <div style="margin-bottom: 40px;">
-    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🔵 beamer_blue</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_beamer_blue.png" alt="beamer_blue title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_beamer_blue.png" alt="beamer_blue generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-    </div>
-  </div>
-
-  <!-- beamer_green -->
-  <div style="margin-bottom: 40px;">
-    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🟢 beamer_green</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_beamer_green.png" alt="beamer_green title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-      <div style="text-align: center;">
-        <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_beamer_green.png" alt="beamer_green generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
-      </div>
-    </div>
-  </div>
 
   <!-- quantum_dusk -->
   <div style="margin-bottom: 40px;">
@@ -365,11 +277,11 @@
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
       <div style="text-align: center;">
         <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_quantum_dusk.png" alt="quantum_dusk title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+        <img src="_static/media/images/Generic_Slide_1_quantum_dusk.png" alt="quantum_dusk slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
       </div>
       <div style="text-align: center;">
         <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_quantum_dusk.png" alt="quantum_dusk generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+        <img src="_static/media/images/Generic_Slide_2_quantum_dusk.png" alt="quantum_dusk slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
       </div>
     </div>
   </div>
@@ -380,28 +292,118 @@
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
       <div style="text-align: center;">
         <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Title_Slide_Test_dark_energy.png" alt="dark_energy title" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+        <img src="_static/media/images/Generic_Slide_1_dark_energy.png" alt="dark_energy slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
       </div>
       <div style="text-align: center;">
         <p style="font-weight: bold; margin-bottom: 8px;"></p>
-        <img src="_static/media/images/Generic_Slide_Test_dark_energy.png" alt="dark_energy generic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+        <img src="_static/media/images/Generic_Slide_2_dark_energy.png" alt="dark_energy slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- green_mint -->
+  <div style="margin-bottom: 40px;">
+    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🌿 green_mint</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_1_green_mint.png" alt="green_mint slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_2_green_mint.png" alt="green_mint slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- blue_ice -->
+  <div style="margin-bottom: 40px;">
+    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🧊 blue_ice</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_1_blue_ice.png" alt="blue_ice slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_2_blue_ice.png" alt="blue_ice slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- red_autumn -->
+  <div style="margin-bottom: 40px;">
+    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🍂 red_autumn</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_1_red_autumn.png" alt="red_autumn slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_2_red_autumn.png" alt="red_autumn slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- beamer_blue -->
+  <div style="margin-bottom: 40px;">
+    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🔵 beamer_blue</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_1_beamer_blue.png" alt="beamer_blue slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_2_beamer_blue.png" alt="beamer_blue slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- beamer_green -->
+  <div style="margin-bottom: 40px;">
+    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🟢 beamer_green</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_1_beamer_green.png" alt="beamer_green slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_2_beamer_green.png" alt="beamer_green slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- default_template -->
+  <div style="margin-bottom: 40px;">
+    <h3 style="color: white; padding: 5px; text-align: center; margin-bottom: 15px; border-radius: 5px;">🎨 default_template</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_1_default_template.png" alt="default_template slide 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 8px;"></p>
+        <img src="_static/media/images/Generic_Slide_2_default_template.png" alt="default_template slide 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"/>
       </div>
     </div>
   </div>
 
 </div></section>
 </section>
+<hr class="docutils" />
 <section id="step-1-import-and-setup">
 <h2>Step 1: Import and Setup<a class="headerlink" href="#step-1-import-and-setup" title="Link to this heading">¶</a></h2>
-<p>These templates can be called by importing them at the preamble of your <code class="docutils literal notranslate"><span class="pre">file.py</span></code> to compile with <code class="docutils literal notranslate"><span class="pre">manim-slides</span></code>:</p>
+<p>These templates can be called by importing them at the preamble of your <code class="docutils literal notranslate"><span class="pre">file.py</span></code> to work with Manim:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">manim_slides</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slide</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">manim_beanim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">manim_string_cosmo</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Choose your template</span>
-<span class="n">import_template_beanim</span><span class="p">(</span><span class="s1">&#39;default_template&#39;</span><span class="p">)</span>
+<span class="n">import_template_string_cosmo</span><span class="p">(</span><span class="s1">&#39;cosmic_dawn&#39;</span><span class="p">)</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Your_Fancy_Presentation</span><span class="p">(</span><span class="n">Slide</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">String_Cosmology_Presentation</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Your presentation code here</span>
         <span class="k">pass</span>
@@ -409,16 +411,32 @@
 </div>
 </section>
 <hr class="docutils" />
-<section id="step-2-define-your-slide-objects">
-<h2>Step 2: Define Your Slide Objects<a class="headerlink" href="#step-2-define-your-slide-objects" title="Link to this heading">¶</a></h2>
-<p>Before building the presentation script, define all the objects (s, bullet points, equations, references) you’ll use. This makes your code more organized and easier to maintain.</p>
-<p><strong>Available Basic Object Types:</strong></p>
+<section id="step-2-define-your-objects">
+<h2>Step 2: Define Your Objects<a class="headerlink" href="#step-2-define-your-objects" title="Link to this heading">¶</a></h2>
+<p>Before building the animation script, define all the objects you’ll use. String Cosmo provides specialized objects for visualizing string theory and braneworld scenarios. For example.</p>
 <ul class="simple">
-<li><p><strong>Title_Presentation()</strong> -  with project name, affiliation, and author</p></li>
-<li><p><strong>Title_Section()</strong> - Section header that appears at the top-left corner</p></li>
-<li><p><strong>BlB()</strong> - Bulleted List Boxed with iterative animation support</p></li>
-<li><p><strong>Reference()</strong> - Citations and references (manual or from .bib file)</p></li>
-<li><p><strong>Equation()</strong> - LaTeX equations (manual or extracted from .tex file)</p></li>
+<li><p><strong>Bubble()</strong> - Vacuum bubble universes with various content types:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bubble_type=&quot;empty&quot;</span></code> - Empty bubble</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bubble_type=&quot;radiation&quot;</span></code> - Radiation-filled bubble</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bubble_type=&quot;em&quot;</span></code> - Electromagnetic field content</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bubble_type=&quot;strings&quot;</span></code> - String attaching to the brane</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bubble_type=&quot;GW&quot;</span></code> - Gravitational waves</p></li>
+</ul>
+</li>
+<li><p><strong>Black_Hole()</strong> - Higher-dimensional black holes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bh_type=&quot;spinning&quot;</span></code> - Rotating 5D black hole from 10D background</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bh_type=&quot;fragmentation&quot;</span></code> - AdS Fragmentation</p></li>
+</ul>
+</li>
+<li><p><strong>AdS_Jc()</strong> - Anti-de Sitter junction configurations:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vacua_type=&quot;DB&quot;</span></code> - Dark Bubble configuration</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vacua_type=&quot;RS&quot;</span></code> - Randall-Sundrum configuration</p></li>
+</ul>
+</li>
+<li><p><strong>More objects</strong> - To find in the <cite>Documentation &lt;https://github.com/PanoPepino/string_cosmo_communication&gt;</cite></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -426,188 +444,154 @@
 </div>
 </section>
 <hr class="docutils" />
-<section id="step-3-build-your-presentation">
-<h2>Step 3: Build Your Presentation<a class="headerlink" href="#step-3-build-your-presentation" title="Link to this heading">¶</a></h2>
-<p>Here’s a complete example showing how to create a simple presentation:</p>
+<section id="step-3-build-your-string-cosmology-presentation">
+<h2>Step 3: Build Your String Cosmology Presentation<a class="headerlink" href="#step-3-build-your-string-cosmology-presentation" title="Link to this heading">¶</a></h2>
+<p>Here’s a complete example showing how to create a presentation about bubble nucleation and braneworld scenarios:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">manim_slides</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slide</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">manim_beanim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">manim_string_cosmo</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">manim_slides</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">import_template_beanim</span><span class="p">(</span><span class="s1">&#39;default_template&#39;</span><span class="p">)</span>
+<span class="n">import_template_string_cosmo</span><span class="p">(</span><span class="s1">&#39;dark_energy&#39;</span><span class="p">)</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Generic_Presentation</span><span class="p">(</span><span class="n">Slide</span><span class="p">):</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-    <span class="c1"># ============================================</span>
-    <span class="c1"># SLIDE OBJECTS DEFINITION</span>
-    <span class="c1"># ============================================</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Bubble_Cosmology_Presentation</span><span class="p">(</span><span class="n">Slide</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-    <span class="n">title_slide</span> <span class="o">=</span> <span class="n">Title_Presentation</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="p">[</span><span class="n">title_of_project</span><span class="p">,</span> <span class="n">affiliation</span><span class="p">,</span> <span class="n">author</span><span class="p">])</span>
-    <span class="n">slide_0_points</span> <span class="o">=</span> <span class="n">BlB</span><span class="p">(</span><span class="n">the_title</span><span class="o">=</span><span class="s2">&quot;About previous slide&quot;</span><span class="p">,</span>
-                         <span class="n">content</span><span class="o">=</span><span class="p">[</span>
-                             <span class="s2">&quot;Previous slide contained the Title of the Presentation&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;You call it with Title</span><span class="se">\\</span><span class="s2">_Presentation() class&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;It has 3 entries: title of slides, your affiliation, your name&quot;</span>
-                         <span class="p">])</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="c1"># ============================================</span>
+        <span class="c1"># Object Definition</span>
+        <span class="c1"># ============================================</span>
 
-    <span class="n">slide_1_title</span> <span class="o">=</span> <span class="n">Title_Section</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s2">&quot;This a Title</span><span class="se">\\</span><span class="s2">_Section to Show&quot;</span><span class="p">)</span>
-    <span class="n">slide_1_points_1</span> <span class="o">=</span> <span class="n">BlB</span><span class="p">(</span>
-        <span class="n">content</span><span class="o">=</span><span class="p">[</span>
-            <span class="s2">&quot;What you see upstairs is a Title</span><span class="se">\\</span><span class="s2">_Section()&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;It is defined so that it will always be placed to the UL corner&quot;</span>
-        <span class="p">])</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
-    <span class="n">slide_1_points_2</span> <span class="o">=</span> <span class="n">BlB</span><span class="p">(</span>
-        <span class="n">content</span><span class="o">=</span><span class="p">[</span>
-            <span class="s2">&quot;This is Bulleted list boxed&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Its class is BlB()&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Use its inbuilt function .next</span><span class="se">\\</span><span class="s2">_point() to iterate over points&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;... And for the last point you can recover all points in the initial color&quot;</span><span class="p">,</span>
-        <span class="p">])</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">bubble_empty</span> <span class="o">=</span> <span class="n">Bubble</span><span class="p">(</span><span class="n">bubble_type</span><span class="o">=</span><span class="s2">&quot;em&quot;</span><span class="p">)</span>
+        <span class="n">bubble_radiation</span> <span class="o">=</span> <span class="n">Bubble</span><span class="p">(</span><span class="n">bubble_type</span><span class="o">=</span><span class="s2">&quot;radiation&quot;</span><span class="p">)</span>
+        <span class="n">bubble_strings</span> <span class="o">=</span> <span class="n">Bubble</span><span class="p">(</span><span class="n">bubble_type</span><span class="o">=</span><span class="s2">&quot;strings&quot;</span><span class="p">)</span>
 
-    <span class="n">ref_1</span> <span class="o">=</span> <span class="n">Reference</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="s2">&quot;example_extract_ref_equation/dictionaries_extracted/refs.txt&quot;</span><span class="p">,</span>
-                      <span class="n">content</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ref_extract_1&#39;</span><span class="p">,</span> <span class="s1">&#39;ref_extract_2&#39;</span><span class="p">])</span>
-    <span class="n">ref_2</span> <span class="o">=</span> <span class="n">Reference</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;[Manually input ref, 2025]&#39;</span><span class="p">)</span>
-    <span class="n">refs</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">ref_1</span><span class="p">,</span> <span class="n">ref_2</span><span class="p">)</span><span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="n">DOWN</span><span class="p">,</span> <span class="n">aligned_edge</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">UR</span><span class="p">)</span>
-    <span class="n">slide_2_points_1</span> <span class="o">=</span> <span class="n">BlB</span><span class="p">(</span>
-        <span class="n">content</span><span class="o">=</span><span class="p">[</span>
-            <span class="s2">&quot;This is a reference/citation (Look up-right)&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Its class is Reference()&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;You can manually input your references...&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;... Or you can extract references from a .bib file and call them from a dictionary&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Check documentation/tools for more information on this&quot;</span>
-        <span class="p">])</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">bubbles</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">bubble_empty</span><span class="p">,</span> <span class="n">bubble_radiation</span><span class="p">,</span> <span class="n">bubble_strings</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">scale_to_fit_width</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">frame_width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">eq_1</span> <span class="o">=</span> <span class="n">Equation</span><span class="p">(</span>
-        <span class="n">content</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x^</span><span class="si">{2}</span><span class="s2">+y^</span><span class="si">{2}</span><span class="s2"> = R^</span><span class="si">{2}</span><span class="s2">, \quad&quot;</span><span class="p">,</span> <span class="s2">&quot;e^{i \pi} = -1&quot;</span><span class="p">],</span>
-        <span class="n">text_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-        <span class="n">direction</span><span class="o">=</span><span class="n">DOWN</span><span class="p">,</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
-    <span class="n">eq_2</span> <span class="o">=</span> <span class="n">Equation</span><span class="p">(</span>
-        <span class="n">dictionary</span><span class="o">=</span><span class="s2">&quot;example_extract_ref_equation/dictionaries_extracted/equations.txt&quot;</span><span class="p">,</span>
-        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;equation_extract_2&quot;</span><span class="p">,</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
-    <span class="n">slide_3_points_1</span> <span class="o">=</span> <span class="n">BlB</span><span class="p">(</span>
-        <span class="n">content</span><span class="o">=</span><span class="p">[</span>
-            <span class="s2">&quot;This is an equation&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Its class is Equation()&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;You can manually input your equations...&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;... Or you can extract equations from a .tex file and call them from a dictionary&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Check documentation/tools for more information on this&quot;</span>
-        <span class="p">])</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="n">bh_spinning</span> <span class="o">=</span> <span class="n">Black_Hole</span><span class="p">(</span><span class="n">bh_type</span><span class="o">=</span><span class="s2">&quot;spinning&quot;</span><span class="p">)</span>
+        <span class="n">bh_fragment</span> <span class="o">=</span> <span class="n">Black_Hole</span><span class="p">(</span><span class="n">bh_type</span><span class="o">=</span><span class="s2">&quot;fragmentation&quot;</span><span class="p">)</span>
 
-    <span class="n">slide_4_points</span> <span class="o">=</span> <span class="n">BlB</span><span class="p">(</span>
-        <span class="n">content</span><span class="o">=</span><span class="p">[</span>
-            <span class="s2">&quot;This is a table&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Similar to equations and refs, you can manually input or use dictionary&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;This is a picture. It has two modes: Techno and Polaroid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;This is a simple post-it with a To-do list&quot;</span><span class="p">,</span>
-        <span class="p">])</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
-    <span class="n">table_1</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]])</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
-    <span class="n">photo_1</span> <span class="o">=</span> <span class="n">Photo</span><span class="p">(</span><span class="s2">&quot;figures/pedro.png&quot;</span><span class="p">,</span> <span class="n">decorator_style</span><span class="o">=</span><span class="s2">&quot;polaroid&quot;</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;My Photo&quot;</span><span class="p">)</span>
-    <span class="n">photo_2</span> <span class="o">=</span> <span class="n">Photo</span><span class="p">(</span><span class="s2">&quot;figures/pedro.png&quot;</span><span class="p">,</span> <span class="n">decorator_style</span><span class="o">=</span><span class="s2">&quot;techno&quot;</span><span class="p">)</span>
-    <span class="n">photos</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="n">photo_1</span><span class="p">,</span> <span class="n">photo_2</span><span class="p">)</span><span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
-    <span class="n">p_it</span> <span class="o">=</span> <span class="n">Post_It</span><span class="p">(</span><span class="n">to_dos</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Task 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Task 2&quot;</span><span class="p">],</span> <span class="n">text_color</span><span class="o">=</span><span class="n">BLACK</span><span class="p">,</span> <span class="n">pin_color</span><span class="o">=</span><span class="n">BLACK</span><span class="p">)</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="n">black_holes</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">bh_spinning</span><span class="p">,</span> <span class="n">bh_fragment</span><span class="p">)</span><span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">scale_to_fit_width</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">frame_width</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
 
-    <span class="c1"># ============================================</span>
-    <span class="c1"># SLIDE OBJECTS DEFINITION</span>
-    <span class="c1"># ============================================</span>
+        <span class="n">ads_db</span> <span class="o">=</span> <span class="n">AdS_Jc</span><span class="p">(</span><span class="n">vacua_type</span><span class="o">=</span><span class="s2">&quot;DB&quot;</span><span class="p">)</span>
+        <span class="n">ads_rs</span> <span class="o">=</span> <span class="n">AdS_Jc</span><span class="p">(</span><span class="n">vacua_type</span><span class="o">=</span><span class="s2">&quot;RS&quot;</span><span class="p">)</span>
 
-    <span class="c1">#</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">title_slide</span><span class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="s1">&#39;to slide about title&#39;</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wipe</span><span class="p">(</span><span class="n">title_slide</span><span class="p">,</span> <span class="n">slide_0_points</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">slide_0_points</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">ads_configs</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">ads_db</span><span class="p">,</span> <span class="n">ads_rs</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">aligned_edge</span><span class="o">=</span><span class="n">DOWN</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">scale_to_fit_width</span><span class="p">(</span><span class="n">config</span><span class="o">.</span>   <span class="n">frame_width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># ============================================</span>
+        <span class="c1"># SLIDE 1: BUBBLE ANIMATION</span>
+        <span class="c1"># ============================================</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">bubble</span><span class="o">.</span><span class="n">fade_in_bulk</span><span class="p">()</span> <span class="k">for</span> <span class="n">bubble</span> <span class="ow">in</span> <span class="n">bubbles</span><span class="p">]</span>
+        <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">bubble</span><span class="o">.</span><span class="n">create_bubble</span><span class="p">()</span> <span class="k">for</span> <span class="n">bubble</span> <span class="ow">in</span> <span class="n">bubbles</span><span class="p">]</span>
+        <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">bubble</span><span class="o">.</span><span class="n">expand_bubble</span><span class="p">()</span> <span class="k">for</span> <span class="n">bubble</span> <span class="ow">in</span> <span class="n">bubbles</span><span class="p">]</span>
+        <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="c1"># ============================================</span>
+        <span class="c1"># SLIDE 2: BLACK HOLE ANIMATION</span>
+        <span class="c1"># ============================================</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">auto_next</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">bubbles</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">black_holes</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">bh</span><span class="o">.</span><span class="n">nucleate</span><span class="p">()</span> <span class="k">for</span> <span class="n">bh</span> <span class="ow">in</span> <span class="n">black_holes</span><span class="p">]</span>
+        <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">bh</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span> <span class="k">for</span> <span class="n">bh</span> <span class="ow">in</span> <span class="n">black_holes</span><span class="p">]</span>
+        <span class="p">))</span>
+
+        <span class="c1"># ============================================</span>
+        <span class="c1"># SLIDE 3: AdS JUNCTION CONFIGURATIONS</span>
+        <span class="c1"># ============================================</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">auto_next</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">black_holes</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">config</span><span class="o">.</span><span class="n">fade_in</span><span class="p">()</span> <span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">ads_configs</span><span class="p">]</span>
+        <span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ads_rs</span><span class="o">.</span><span class="n">show_symmetry</span><span class="p">(</span><span class="n">rt</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ads_rs</span><span class="o">.</span><span class="n">restore_symmetry</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">config</span><span class="o">.</span><span class="n">fade_in_arrow</span><span class="p">()</span> <span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">ads_configs</span><span class="p">]</span>
+        <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span>
+            <span class="n">ads_db</span><span class="o">.</span><span class="n">show_n_vector_db</span><span class="p">(</span><span class="n">rt</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">ads_rs</span><span class="o">.</span><span class="n">show_n_vector_rs</span><span class="p">(</span><span class="n">rt</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_0_points</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-
-    <span class="c1"># Slide 1</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="s1">&#39;to slide about section and bulleted list&#39;</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wipe</span><span class="p">(</span><span class="n">slide_0_points</span><span class="p">,</span> <span class="n">slide_1_title</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">slide_1_points_1</span><span class="p">))</span>
-
-
-    <span class="c1"># Slide 2</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="s1">&#39;to slide about section and bulleted list&#39;</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">slide_1_points_1</span><span class="p">,</span> <span class="n">slide_1_points_2</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">slide_1_points_2</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_1_points_2</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-
-    <span class="c1"># Slide 3</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="s1">&#39;to slide about refs&#39;</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wipe</span><span class="p">(</span><span class="n">Group</span><span class="p">(</span><span class="n">slide_1_title</span><span class="p">,</span> <span class="n">slide_1_points_2</span><span class="p">),</span> <span class="n">refs</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">slide_2_points_1</span><span class="p">))</span>
-
-    <span class="c1"># Slide 4</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="s1">&#39;to slide about equations&#39;</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wipe</span><span class="p">(</span><span class="n">Group</span><span class="p">(</span><span class="n">slide_2_points_1</span><span class="p">,</span> <span class="n">refs</span><span class="p">),</span> <span class="n">Group</span><span class="p">(</span><span class="n">eq_1</span><span class="p">,</span> <span class="n">slide_3_points_1</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">slide_3_points_1</span><span class="o">.</span><span class="n">content</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_3_points_1</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">eq_1</span><span class="p">,</span> <span class="n">eq_2</span><span class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_3_points_1</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_3_points_1</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-
-    <span class="c1"># Slide 5</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="s2">&quot;to minor things&quot;</span><span class="p">,</span> <span class="n">auto_next</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wipe</span><span class="p">(</span><span class="n">Group</span><span class="p">(</span><span class="n">slide_3_points_1</span><span class="p">,</span> <span class="n">eq_2</span><span class="p">),</span> <span class="n">Group</span><span class="p">(</span><span class="n">slide_4_points</span><span class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_4_points</span><span class="o">.</span><span class="n">next_point</span><span class="p">(),</span> <span class="n">FadeIn</span><span class="p">(</span><span class="n">table_1</span><span class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_4_points</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wipe</span><span class="p">(</span><span class="n">table_1</span><span class="p">,</span> <span class="n">photos</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_4_points</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wipe</span><span class="p">(</span><span class="n">photos</span><span class="p">,</span> <span class="n">p_it</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">slide_4_points</span><span class="o">.</span><span class="n">next_point</span><span class="p">())</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">next_slide</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">slide_4_points</span><span class="p">,</span> <span class="n">p_it</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">ads_configs</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
-<hr class="docutils" />
-<section id="step-4-render-your-presentation">
-<h2>Step 4: Render Your Presentation<a class="headerlink" href="#step-4-render-your-presentation" title="Link to this heading">¶</a></h2>
-<p>Render the slides using the <code class="docutils literal notranslate"><span class="pre">manim-slides</span></code> command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim-slides<span class="w"> </span>render<span class="w"> </span>file_name.py<span class="w"> </span>Generic_Presentation
+<section id="step-4-render-your-animation">
+<h2>Step 4: Render Your Animation<a class="headerlink" href="#step-4-render-your-animation" title="Link to this heading">¶</a></h2>
+<p>Render the animation using the standard <code class="docutils literal notranslate"><span class="pre">manim</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim<span class="w"> </span>-pql<span class="w"> </span>file_name.py<span class="w"> </span>Bubble_Cosmology_Presentation
 </pre></div>
 </div>
-<p>After rendering, you can present your slides with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim-slides<span class="w"> </span>present<span class="w"> </span>Generic_Presentation
+<p>Options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-p</span></code> - Play the video after rendering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-ql</span></code> - Quality low (faster rendering for testing)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-qh</span></code> - Quality high (for final presentations)</p></li>
+</ul>
+<p>For presentations with manim-slides integration, you will need to add <code class="docutils literal notranslate"><span class="pre">self.next_slide()</span></code> stops and render as discussed in <a class="reference external" href="https://manim-slides.eertmans.be/latest/">Manim Slides documentation</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim-slides<span class="w"> </span>render<span class="w"> </span>file_name.py<span class="w"> </span>Bubble_Cosmology_Presentation
+manim-slides<span class="w"> </span>present<span class="w"> </span>Bubble_Cosmology_Presentation
 </pre></div>
 </div>
-</section>
-<hr class="docutils" />
-<section id="final-result">
-<h2>Final Result<a class="headerlink" href="#final-result" title="Link to this heading">¶</a></h2>
-<p>Here’s what the final presentation looks like:</p>
-<div style="position:relative; padding-bottom:56.25%; margin: 20px 0;">
+<p>The final result should look like:</p>
+<div style="position:relative;padding-bottom:56.25%;">
     <iframe
         loading="lazy"
-        style="width:100%; height:100%; position:absolute; left:0px; top:0px; border: 2px solid #000000ff; border-radius: 8px;"
+        style="width:100%;height:100%;position:absolute;left:0px;top:0px; border: 2px solid #000000ff; border-radius: 8px;"
         frameborder="0"
         width="100%"
         height="100%"
         allowfullscreen
         allow="autoplay"
-        src="https://panopepino.github.io/web_page/main_page/presentations/2025_09_docs/GP.html">
+        src="https://panopepino.github.io/web_page/main_page/presentations/2025_12_string_cosmo/BCP.html">
     </iframe>
 </div></section>
-<hr class="docutils" />
 <section id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
-<p>Now that you’ve created your first presentation with Beanim, explore more advanced features:</p>
+<p>Now that you’ve created your first string cosmology animation, explore more advanced features:</p>
 <ul class="simple">
-<li><p>🔧 Learn about extracting equations and references from files in the <a class="reference internal" href="api/modules.html"><span class="doc">manim_string_cosmo</span></a> section</p></li>
-<li><p>🎨 Experiment with different templates and customize your slides</p></li>
-<li><p>💡 Visit the <a class="reference external" href="https://manim-slides.eertmans.be/latest/quickstart.html">Manim-Slides documentation</a> for additional animation techniques</p></li>
+<li><p>🔧 Learn about all object types and their parameters in the <a class="reference internal" href="api/modules.html"><span class="doc">manim_string_cosmo</span></a> section</p></li>
+<li><p>🎨 Experiment with different templates to match your presentation style</p></li>
+<li><p>💡 Create your own sketches and animations to improve this package!</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><strong>Pro tip:</strong> Start simple and gradually add complexity. Define all your objects first, then build the animation script step by step.</p>
+<p><strong>Pro tip:</strong> Start with simple single-object animations to understand the physics, then build up to complex multi-object scenarios. The template system ensures visual consistency across all your animations.</p>
 </div>
 </section>
 </section>
@@ -673,10 +657,9 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#step-1-import-and-setup">Step 1: Import and Setup</a></li>
-<li><a class="reference internal" href="#step-2-define-your-slide-objects">Step 2: Define Your Slide Objects</a></li>
-<li><a class="reference internal" href="#step-3-build-your-presentation">Step 3: Build Your Presentation</a></li>
-<li><a class="reference internal" href="#step-4-render-your-presentation">Step 4: Render Your Presentation</a></li>
-<li><a class="reference internal" href="#final-result">Final Result</a></li>
+<li><a class="reference internal" href="#step-2-define-your-objects">Step 2: Define Your Objects</a></li>
+<li><a class="reference internal" href="#step-3-build-your-string-cosmology-presentation">Step 3: Build Your String Cosmology Presentation</a></li>
+<li><a class="reference internal" href="#step-4-render-your-animation">Step 4: Render Your Animation</a></li>
 <li><a class="reference internal" href="#next-steps">Next Steps</a></li>
 </ul>
 </li>

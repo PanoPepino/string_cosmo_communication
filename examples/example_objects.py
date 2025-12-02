@@ -1,7 +1,7 @@
 from manim import *
 from manim_string_cosmo import *
 
-import_string_cosmo_template("beamer_green")
+import_template_string_cosmo("beamer_green")
 
 
 class Example_AdS_Jc(Scene):

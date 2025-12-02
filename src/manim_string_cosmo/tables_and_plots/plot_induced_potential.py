@@ -1,23 +1,28 @@
 from ..my_imports import *
+
 from .plot_general import *
 
 __all__ = ["Plot_Induced_Potential"]
 
 
 class Plot_Induced_Potential(Plot_General, Group):
-    """This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D.
-    see Plot_General Class for more information.
+    """
+    This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D.
+
+    See Plot_General Class for more information.
 
     .. note::
 
         Note that the axis and labels of these are the 0-th element of the group when you call it.
 
-    - **Example**::
+    **Example usage:**
+
+    .. code-block:: python
 
         class Example_Plot_Induced_Potential(Scene):
             def construct(self):
-                plot_pot= Plot_Induced_Potential()
-                plot_pot.scale(0.3, about_point= plot_pot.ax_4D_cosmos.get_origin())
+                plot_pot = Plot_Induced_Potential()
+                plot_pot.scale(0.3, about_point=plot_pot.ax_4D_cosmos.get_origin())
                 plot_pot.to_corner(LEFT)
                 self.add(plot_pot[0])
                 self.play(plot_pot.show_potential())
@@ -29,7 +34,6 @@ class Plot_Induced_Potential(Plot_General, Group):
                 self.play(plot_pot.add_cc_and_expand())
                 self.play(FadeOut(plot_pot))
                 self.play(Wait())
-
 
     """
 
@@ -51,14 +55,18 @@ class Plot_Induced_Potential(Plot_General, Group):
             tips=False,
             background_line_style={"stroke_opacity": 0},
         ).set_color(self.func_main_color)
+
         self.lab_ax_4D_cosmos = self.ax_4D_cosmos.get_axis_labels(
             x_label=MathTex("a", font_size=40, color=self.func_main_color),
             y_label=MathTex("V(a)", font_size=40, color=self.func_main_color),
         )
+
         self.lab_ax_4D_cosmos[1].shift(0.5 * DOWN)
+
         self.ax_4D_cosmos.y_axis.set_opacity(self.axis_opacity).set(
             stroke_width=self.axis_stroke
         )
+
         self.ax_4D_cosmos.x_axis.set_opacity(self.axis_opacity).set(
             stroke_width=self.axis_stroke
         )
@@ -140,6 +148,7 @@ class Plot_Induced_Potential(Plot_General, Group):
                 buff=self.tightness + 0.2,
                 stroke_width=self.decorator_stroke_w,
             )
+
             self.initial_show = VGroup(self.ax_4D_cosmos, self.lab_ax_4D_cosmos, box)
             self.add(
                 self.initial_show,
@@ -160,38 +169,50 @@ class Plot_Induced_Potential(Plot_General, Group):
             )
 
     def show_potential(self, rt: float = 2, rf: float = linear) -> Animation:
-        """Args::
+        """
+        Writes the original potential.
 
-            - rt (float, optional): Defaults to 2.
-            - rf (float, optional): Defaults to linear.
+        :param rt: Run time of the animation.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function of the animation.
+        :type rf: float
 
-            Animation: Writes the original potential.
+        :return: Animation object that writes the potential.
+        :rtype: Animation
+
         """
         return Write(self.pot_4D_cosmos_og, run_time=rt, rate_func=rf)
 
     def show_jc(self, rt: float = 2, rf: float = linear) -> Animation:
-        """Args::
+        """
+        Shows the potential with extra barrier of the angular momentum.
 
-            - rt (float, optional): Defaults to 2.
-            - rf (float, optional): Defaults to linear.
+        :param rt: Run time of the animation.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function of the animation.
+        :type rf: float
 
-            Animation: Shows the potential with extra barrier of the angular momentum.
+        :return: Animation object showing the junction condition potential.
+        :rtype: Animation
+
         """
         return Write(self.pot_4D_cosmos_jc_change, run_time=rt, rate_func=rf)
 
     def nucleate_brane(self, rt: float = 0.5, rf: float = linear) -> Succession:
-        """Args::
+        """
+        Moves the position in the potential to the outer horizon.
 
-            - rt (float, optional): Defaults to 0.5.
-            - rf (float, optional): Defaults to linear.
+        :param rt: Run time of the animation.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function of the animation.
+        :type rf: float
 
-            Animation: Moves the position in the potential to the outer horizon.
+        :return: Animation sequence that fades in the position marker and moves it to nucleation point.
+        :rtype: Succession
+
         """
         return Succession(
             FadeIn(self.position),
@@ -199,26 +220,34 @@ class Plot_Induced_Potential(Plot_General, Group):
         )
 
     def accelerate(self, rt: float = 0.5, rf: float = linear) -> Animation:
-        """Args::
+        """
+        Takes the brane to the minimum of the potential.
 
-            - rt (float, optional): Defaults to 0.5.
-            - rf (float, optional): Defaults to linear.
+        :param rt: Run time of the animation.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function of the animation.
+        :type rf: float
 
-            Animation: Takes the brane to the minimum of the potential.
+        :return: Animation object that moves the brane to potential minimum.
+        :rtype: Animation
+
         """
         return self.pos_track.animate(run_time=rt, rate_func=rf).set_value(2.4)
 
     def bounce(self, rt: float = 4, rf: float = linear) -> Succession:
-        """Args::
+        """
+        Makes the system bounce in the potential.
 
-            - rt (float, optional): Defaults to 4.
-            - rf (float, optional): Defaults to linear.
+        :param rt: Run time of the animation.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function of the animation.
+        :type rf: float
 
-            Succession: Makes the system bounce in the potential.
+        :return: Animation sequence creating oscillatory motion in the potential well.
+        :rtype: Succession
+
         """
         return Succession(
             self.pos_track.animate(run_time=rt / 2, rate_func=rf)
@@ -228,14 +257,18 @@ class Plot_Induced_Potential(Plot_General, Group):
         )
 
     def add_cc_and_expand(self, rt: float = 6, rf: float = linear) -> Succession:
-        """Args::
+        """
+        Shows the modified potential to add the presence of the cosmological constant and then expand the bubble forever.
 
-            - rt (float, optional): Defaults to 6.
-            - rf (float, optional): Defaults to linear.
+        :param rt: Run time of the animation.
+        :type rt: float
 
-        Returns::
+        :param rf: Rate function of the animation.
+        :type rf: float
 
-            Succession: Shows the modified potential to add the presence of the cosmological constant and then expand the bubble forever.
+        :return: Animation sequence showing potential transition and asymptotic expansion.
+        :rtype: Succession
+
         """
         return Succession(
             Write(self.pot_4D_cosmos_with_cc, run_time=rt / 3, rate_func=rf),
